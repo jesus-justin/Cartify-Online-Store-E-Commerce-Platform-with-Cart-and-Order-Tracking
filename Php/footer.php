@@ -1,6 +1,5 @@
-  </main>
-  <footer>
-    <p>&copy; <?php echo date("Y"); ?> Buyanihan. All Rights Reserved.</p>
-  </footer>
+    <footer>
+        <p>© 2025 PinoyTech Finds | All Rights Reserved.</p>
+    </footer>
 </body>
 </html>

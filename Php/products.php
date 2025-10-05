@@ -1,21 +1,31 @@
 <?php
-include('../includes/db_connect.php');
-include('../includes/header.php');
-
-$result = $conn->query("SELECT * FROM products");
+include 'db_connect.php';
+include 'header.php';
 ?>
+<link rel="stylesheet" href="../css/products.css">
 
-<h2 class="title">All Products</h2>
-<div class="product-container">
-<?php while($row = $result->fetch_assoc()) { ?>
-  <div class="product-card">
-    <img src="../assets/images/<?php echo $row['image']; ?>" alt="<?php echo $row['name']; ?>">
-    <h3><?php echo $row['name']; ?></h3>
-    <p><?php echo $row['description']; ?></p>
-    <p><strong>₱<?php echo number_format($row['price'], 2); ?></strong></p>
-    <a href="cart.php?action=add&id=<?php echo $row['product_id']; ?>" class="btn">Add to Cart</a>
-  </div>
-<?php } ?>
-</div>
+<main>
+    <h2>Our Products</h2>
+    <div class="product-grid">
+        <?php
+        $sql = "SELECT * FROM products";
+        $result = $conn->query($sql);
 
-<?php include('../includes/footer.php'); ?>
+        while($row = $result->fetch_assoc()) {
+            echo "
+            <div class='product-card'>
+                <img src='../images/{$row['image']}' alt='{$row['name']}'>
+                <h3>{$row['name']}</h3>
+                <p>{$row['description']}</p>
+                <p><strong>₱{$row['price']}</strong></p>
+                <form method='post' action='cart.php'>
+                    <input type='hidden' name='product_id' value='{$row['id']}'>
+                    <button type='submit' name='add_to_cart'>Add to Cart</button>
+                </form>
+            </div>";
+        }
+        ?>
+    </div>
+</main>
+
+<?php include 'footer.php'; ?>

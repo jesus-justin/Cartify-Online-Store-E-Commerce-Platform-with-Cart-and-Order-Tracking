@@ -1,14 +1,12 @@
-<?php
-include __DIR__ . '/../includes/db_connect.php';
-include __DIR__ . '/../includes/header.php';
-?>
+<?php include 'header.php'; ?>
+<link rel="stylesheet" href="../css/index.css">
 
-<section class="hero">
-    <h2>Welcome to Buyanihan</h2>
-    <p>Experience community-driven shopping — quality products at fair prices!</p>
-    <a href="products.php" class="btn">Start Shopping</a>
-</section>
+<main>
+    <section class="hero">
+        <h2>Welcome to PinoyTech Finds!</h2>
+        <p>Discover the latest gadgets and tech accessories at great prices.</p>
+        <a href="products.php" class="shop-btn">Shop Now</a>
+    </section>
+</main>
 
-<?php
-include __DIR__ . '/../includes/footer.php';
-?>
+<?php include 'footer.php'; ?>

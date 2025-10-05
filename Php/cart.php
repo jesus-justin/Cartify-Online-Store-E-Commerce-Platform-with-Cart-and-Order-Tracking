@@ -1,44 +1,37 @@
 <?php
-include('../includes/db_connect.php');
-include('../includes/header.php');
-session_start();
+include 'db_connect.php';
+include 'header.php';
 
-if (!isset($_SESSION['cart'])) { $_SESSION['cart'] = []; }
-
-if (isset($_GET['action']) && $_GET['action'] == 'add') {
-  $id = $_GET['id'];
-  if (!isset($_SESSION['cart'][$id])) $_SESSION['cart'][$id] = 1;
-  else $_SESSION['cart'][$id]++;
+if (isset($_POST['add_to_cart'])) {
+    $product_id = $_POST['product_id'];
+    $conn->query("INSERT INTO cart (product_id, quantity) VALUES ($product_id, 1)");
 }
-
-if (isset($_GET['action']) && $_GET['action'] == 'remove') {
-  $id = $_GET['id'];
-  unset($_SESSION['cart'][$id]);
-}
-
-$total = 0;
-echo "<h2>Your Cart</h2>";
-if (empty($_SESSION['cart'])) {
-  echo "<p>Your cart is empty.</p>";
-} else {
-  echo "<table><tr><th>Product</th><th>Price</th><th>Qty</th><th>Total</th><th>Action</th></tr>";
-  foreach ($_SESSION['cart'] as $id => $qty) {
-    $result = $conn->query("SELECT * FROM products WHERE product_id=$id");
-    $row = $result->fetch_assoc();
-    $subtotal = $row['price'] * $qty;
-    $total += $subtotal;
-    echo "<tr>
-      <td>{$row['name']}</td>
-      <td>₱" . number_format($row['price'],2) . "</td>
-      <td>$qty</td>
-      <td>₱" . number_format($subtotal,2) . "</td>
-      <td><a href='cart.php?action=remove&id=$id' class='btn'>Remove</a></td>
-    </tr>";
-  }
-  echo "</table>";
-  echo "<h3>Total: ₱" . number_format($total,2) . "</h3>";
-  echo "<a href='checkout.php?total=$total' class='btn'>Proceed to Checkout</a>";
-}
-
-include('../includes/footer.php');
 ?>
+<link rel="stylesheet" href="../css/cart.css">
+
+<main>
+    <h2>Your Shopping Cart</h2>
+    <table>
+        <tr><th>Product</th><th>Price</th><th>Quantity</th></tr>
+        <?php
+        $sql = "SELECT p.name, p.price, c.quantity 
+                FROM cart c JOIN products p ON c.product_id = p.id";
+        $result = $conn->query($sql);
+        $total = 0;
+
+        while($row = $result->fetch_assoc()) {
+            $subtotal = $row['price'] * $row['quantity'];
+            $total += $subtotal;
+            echo "<tr>
+                    <td>{$row['name']}</td>
+                    <td>₱{$row['price']}</td>
+                    <td>{$row['quantity']}</td>
+                  </tr>";
+        }
+        ?>
+    </table>
+    <h3>Total: ₱<?php echo number_format($total, 2); ?></h3>
+    <a href="checkout.php" class="checkout-btn">Proceed to Checkout</a>
+</main>
+
+<?php include 'footer.php'; ?>
