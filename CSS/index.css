@@ -1,0 +1,27 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+  margin: 0;
+}
+
+header {
+  background: #1e90ff;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.shop-btn {
+  background: #1e90ff;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}

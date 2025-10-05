@@ -1,0 +1,5 @@
+body { font-family: Arial; background: #f8f9fa; margin: 0; }
+.product-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
+.product-card { background: white; padding: 15px; width: 220px; border-radius: 8px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.product-card img { width: 100%; border-radius: 8px; }
+.btn { background: #007bff; color: #fff; padding: 8px 12px; text-decoration: none; border-radius: 5px; }
