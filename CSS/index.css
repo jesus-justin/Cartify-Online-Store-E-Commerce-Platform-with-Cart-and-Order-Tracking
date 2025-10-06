@@ -84,3 +84,12 @@ header {
     opacity: 0;
   }
 }
+
+footer {
+  text-align: center;
+  padding: 16px 0;
+  background: #f0f4ff;
+  color: #333;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
