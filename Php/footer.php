@@ -1,5 +1,5 @@
-    <footer>
-        <p>© 2025 PinoyTech Finds | All Rights Reserved.</p>
-    </footer>
+<footer>
+    © 2025 PinoyTech Finds | All Rights Reserved.
+</footer>
 </body>
 </html>
