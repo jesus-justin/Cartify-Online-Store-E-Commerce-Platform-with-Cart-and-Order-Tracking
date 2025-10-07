@@ -1,3 +1,4 @@
+
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #e0e7ff 0%, #fafafa 100%);
@@ -11,8 +12,48 @@ header {
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   box-shadow: 0 2px 8px rgba(30, 144, 255, 0.15);
   animation: headerFadeIn 1s;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background 0.3s, transform 0.2s;
+  position: relative;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s, left 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 @keyframes headerFadeIn {
@@ -92,4 +133,42 @@ footer {
   color: #333;
   font-size: 1rem;
   letter-spacing: 0.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  nav {
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 40px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav a {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .shop-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
 }
