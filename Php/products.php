@@ -14,7 +14,7 @@ include 'header.php';
         while($row = $result->fetch_assoc()) {
             echo "
             <div class='product-card'>
-                <img src='../images/{$row['image']}' alt='{$row['name']}'>
+                <img src='https://picsum.photos/id/{$row['id']}/200/200' alt='{$row['name']}'>
                 <h3>{$row['name']}</h3>
                 <p>{$row['description']}</p>
                 <p><strong>₱{$row['price']}</strong></p>
