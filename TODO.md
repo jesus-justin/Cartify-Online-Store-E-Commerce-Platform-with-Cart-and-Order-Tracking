@@ -1,9 +1,10 @@
-# TODO for Updating Product Images to Online Service
+# TODO for Fixing Product Images to Match Product Names
 
-- [ ] Modify Php/products.php to use Lorem Picsum URLs based on product ID
-- [ ] Test the changes by running the site and verifying images load
+- [x] Modify Php/products.php to use appropriate Unsplash image URLs for each product
+- [x] Test the changes by running the site and verifying images match products
 
 Detailed Steps:
-- [x] Edit Php/products.php to replace img src with https://picsum.photos/id/{product_id}/200/200
-- [ ] Start XAMPP server (Apache and MySQL)
-- [ ] Launch browser to http://localhost/Cartify-Online-Store-E-Commerce-Platform-with-Cart-and-Order-Tracking/Php/products.php and verify images load from Lorem Picsum
+- [x] Add array of image URLs in Php/products.php based on product ID
+- [x] Update img src to use the array
+- [x] Start XAMPP server (Apache and MySQL)
+- [x] Launch browser to http://localhost/Cartify-Online-Store-E-Commerce-Platform-with-Cart-and-Order-Tracking/Php/products.php and verify images are appropriate

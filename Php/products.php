@@ -8,13 +8,24 @@ include 'header.php';
     <h2>Our Products</h2>
     <div class="product-grid">
         <?php
+        $image_urls = array(
+            1 => 'https://images.unsplash.com/photo-1527814050087-3793815479db?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
+            2 => 'https://images.unsplash.com/photo-1541140532154-b024d705b90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
+            3 => 'https://images.unsplash.com/photo-1599669454699-248893623440?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
+            4 => 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
+            5 => 'https://images.unsplash.com/photo-1565849904461-04a58ad377e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
+            6 => 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
+            7 => 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
+            8 => 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200'
+        );
+
         $sql = "SELECT * FROM products";
         $result = $conn->query($sql);
 
         while($row = $result->fetch_assoc()) {
             echo "
             <div class='product-card'>
-                <img src='https://picsum.photos/id/{$row['id']}/200/200' alt='{$row['name']}'>
+                <img src='{$image_urls[$row['id']]}' alt='{$row['name']}'>
                 <h3>{$row['name']}</h3>
                 <p>{$row['description']}</p>
                 <p><strong>₱{$row['price']}</strong></p>
