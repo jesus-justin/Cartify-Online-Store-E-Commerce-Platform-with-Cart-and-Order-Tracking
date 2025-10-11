@@ -1,10 +1,8 @@
-# TODO for Fixing Product Images to Match Product Names
+# TODO: Enhance Navigation Buttons in Header
 
-- [x] Modify Php/products.php to use appropriate Unsplash image URLs for each product
-- [x] Test the changes by running the site and verifying images match products
-
-Detailed Steps:
-- [x] Add array of image URLs in Php/products.php based on product ID
-- [x] Update img src to use the array
-- [x] Start XAMPP server (Apache and MySQL)
-- [x] Launch browser to http://localhost/Cartify-Online-Store-E-Commerce-Platform-with-Cart-and-Order-Tracking/Php/products.php and verify images are appropriate
+## Tasks
+- [x] Create CSS/header.css with enhanced header and navigation styles
+- [x] Update Php/header.php to improve nav structure and link new CSS/JS
+- [x] Remove header styles from CSS/index.css
+- [x] Add navigation JavaScript effects to JS/effects.js
+- [x] Verify updates on all pages

@@ -34,3 +34,25 @@ document.querySelectorAll('.shop-btn').forEach(btn => {
     ripple.addEventListener('animationend', () => ripple.remove());
   });
 });
+
+// Navigation active link highlighting and hover effects
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelectorAll('.nav-buttons a');
+  const currentPath = window.location.pathname.split('/').pop() || 'index.php';
+
+  navLinks.forEach(link => {
+    const linkPath = link.getAttribute('href');
+    if (linkPath === currentPath) {
+      link.classList.add('active');
+    }
+
+    // Additional hover effect: subtle glow
+    link.addEventListener('mouseenter', () => {
+      link.style.filter = 'brightness(1.1)';
+    });
+
+    link.addEventListener('mouseleave', () => {
+      link.style.filter = 'brightness(1)';
+    });
+  });
+});
