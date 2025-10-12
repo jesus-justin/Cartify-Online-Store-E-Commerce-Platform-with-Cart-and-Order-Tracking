@@ -1,8 +1,4 @@
-# TODO: Enhance Navigation Buttons in Header
-
-## Tasks
-- [x] Create CSS/header.css with enhanced header and navigation styles
-- [x] Update Php/header.php to improve nav structure and link new CSS/JS
-- [x] Remove header styles from CSS/index.css
-- [x] Add navigation JavaScript effects to JS/effects.js
-- [x] Verify updates on all pages
+- [x] Add text-align: center to h3 in cart.css for centering the Total
+- [x] Add styles to .checkout-btn to center the Proceed to Checkout button
+- [x] Add text-align: center to footer in cart.css for centering the copyright
+- [x] Fix CSS path in cart.php from ../css/ to ../CSS/

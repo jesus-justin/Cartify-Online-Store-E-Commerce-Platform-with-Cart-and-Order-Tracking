@@ -7,7 +7,7 @@ if (isset($_POST['add_to_cart'])) {
     $conn->query("INSERT INTO cart (product_id, quantity) VALUES ($product_id, 1)");
 }
 ?>
-<link rel="stylesheet" href="../css/cart.css">
+<link rel="stylesheet" href="../CSS/cart.css">
 
 <main>
     <h2>Your Shopping Cart</h2>
