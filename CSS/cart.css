@@ -138,3 +138,19 @@ tr:hover {
     font-size: 0.9rem;
   }
 }
+
+/* Centering styles for cart page */
+h3 {
+  text-align: center;
+}
+
+.checkout-btn {
+  display: block;
+  margin: 20px auto;
+  width: fit-content;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+}
