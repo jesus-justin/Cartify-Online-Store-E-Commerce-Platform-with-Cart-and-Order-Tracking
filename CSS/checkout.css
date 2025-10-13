@@ -11,12 +11,6 @@ main h2 {
   font-size: 2.5rem;
   color: #5f27cd;
   text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  animation: titleFadeIn 1s ease-out;
-}
-
-@keyframes titleFadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 form {
@@ -26,14 +20,8 @@ form {
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  animation: formSlideIn 1s ease-out;
   position: relative;
   overflow: hidden;
-}
-
-@keyframes formSlideIn {
-  from { opacity: 0; transform: translateY(30px) scale(0.95); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 form::before {
