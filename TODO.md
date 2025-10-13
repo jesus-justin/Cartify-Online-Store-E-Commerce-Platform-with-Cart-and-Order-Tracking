@@ -48,10 +48,10 @@ Elevate the site's visuals to match or surpass Lazada and Shopee with profession
 - [x] Add no-orders message animation.
 
 ### 8. Testing and Verification
-- [ ] Run the site locally via XAMPP and test animations on all pages.
-- [ ] Check responsiveness on mobile and desktop.
-- [ ] Ensure no functionality is broken (e.g., links, forms still work).
-- [ ] Verify performance (no lag on animations).
+- [x] Run the site locally via XAMPP and test animations on all pages.
+- [x] Check responsiveness on mobile and desktop.
+- [x] Ensure no functionality is broken (e.g., links, forms still work).
+- [x] Verify performance (no lag on animations).
 
 ## Notes
 - All changes are visual-only; no PHP or DB logic altered.
