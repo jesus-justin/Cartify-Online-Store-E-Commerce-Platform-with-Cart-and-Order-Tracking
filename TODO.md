@@ -6,46 +6,46 @@ Elevate the site's visuals to match or surpass Lazada and Shopee with profession
 ## Steps to Complete
 
 ### 1. Enhance JS/effects.js
-- [ ] Add scroll-triggered animations (parallax for hero, reveal on scroll for sections).
-- [ ] Implement loading spinners for dynamic content.
-- [ ] Add animated counters for prices and quantities.
-- [ ] Introduce smooth page transitions and micro-interactions (e.g., button presses with feedback).
-- [ ] Ensure animations are performant and responsive.
+- [x] Add scroll-triggered animations (parallax for hero, reveal on scroll for sections).
+- [x] Implement loading spinners for dynamic content.
+- [x] Add animated counters for prices and quantities.
+- [x] Introduce smooth page transitions and micro-interactions (e.g., button presses with feedback).
+- [x] Ensure animations are performant and responsive.
 
 ### 2. Update CSS/index.css
-- [ ] Enhance hero animations with parallax and advanced keyframes (e.g., floating elements).
-- [ ] Improve button hovers with glows, scales, and pulse effects.
-- [ ] Add skeleton loading animations for content.
-- [ ] Introduce bounce and rotate effects for interactive elements.
+- [x] Enhance hero animations with parallax and advanced keyframes (e.g., floating elements).
+- [x] Improve button hovers with glows, scales, and pulse effects.
+- [x] Add skeleton loading animations for content.
+- [x] Introduce bounce and rotate effects for interactive elements.
 
 ### 3. Update CSS/header.css
-- [ ] Add advanced navigation animations (e.g., slide-in menu, active link glow).
-- [ ] Implement header parallax on scroll.
-- [ ] Enhance hover effects with color transitions and shadows.
+- [x] Add advanced navigation animations (e.g., slide-in menu, active link glow).
+- [x] Implement header parallax on scroll.
+- [x] Enhance hover effects with color transitions and shadows.
 
 ### 4. Update CSS/products.css
-- [ ] Add product card flip animations on hover.
-- [ ] Implement staggered load animations for product grid.
-- [ ] Enhance button interactions with advanced hovers and ripples.
-- [ ] Add loading skeletons for product images.
+- [x] Add product card flip animations on hover.
+- [x] Implement staggered load animations for product grid.
+- [x] Enhance button interactions with advanced hovers and ripples.
+- [x] Add loading skeletons for product images.
 
 ### 5. Update CSS/cart.css
-- [ ] Add slide-in animations for cart items.
-- [ ] Implement table row hover effects with scales and color changes.
-- [ ] Enhance buttons with glows and transitions.
-- [ ] Add empty cart animation (e.g., fade-in message).
+- [x] Add slide-in animations for cart items.
+- [x] Implement table row hover effects with scales and color changes.
+- [x] Enhance buttons with glows and transitions.
+- [x] Add empty cart animation (e.g., fade-in message).
 
 ### 6. Update CSS/checkout.css
-- [ ] Add progress bar animation for checkout steps.
-- [ ] Implement form field focus animations with scales and shadows.
-- [ ] Enhance submit button with loading state animation.
-- [ ] Add success message fade-in with icons.
+- [x] Add progress bar animation for checkout steps.
+- [x] Implement form field focus animations with scales and shadows.
+- [x] Enhance submit button with loading state animation.
+- [x] Add success message fade-in with icons.
 
 ### 7. Update CSS/order_history.css
-- [ ] Add table row animations with delays for staggered effect.
-- [ ] Implement hover effects with scales and highlights.
-- [ ] Enhance buttons with advanced transitions.
-- [ ] Add no-orders message animation.
+- [x] Add table row animations with delays for staggered effect.
+- [x] Implement hover effects with scales and highlights.
+- [x] Enhance buttons with advanced transitions.
+- [x] Add no-orders message animation.
 
 ### 8. Testing and Verification
 - [ ] Run the site locally via XAMPP and test animations on all pages.
