@@ -53,6 +53,11 @@ Elevate the site's visuals to match or surpass Lazada and Shopee with profession
 - [x] Ensure no functionality is broken (e.g., links, forms still work).
 - [x] Verify performance (no lag on animations).
 
+## Revision Notes
+- Simplified animations to remove over-the-top effects like excessive scaling, complex keyframes, and performance-heavy features.
+- Kept essential interactions: hover effects, scroll reveals, button clicks, and staggered loads.
+- Maintained professional look while ensuring smooth performance and alignment with modern e-commerce standards.
+
 ## Notes
 - All changes are visual-only; no PHP or DB logic altered.
 - Use unified color palette: blues (#1e90ff), oranges (#ff4500), gradients.
