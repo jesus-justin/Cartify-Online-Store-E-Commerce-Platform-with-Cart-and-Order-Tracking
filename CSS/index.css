@@ -2,6 +2,7 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #e0e7ff 0%, #fafafa 100%);
   margin: 0;
+  padding-top: 60px;
   transition: background 0.5s ease;
 }
 
