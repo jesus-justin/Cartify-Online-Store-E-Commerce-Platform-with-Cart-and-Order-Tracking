@@ -13,10 +13,10 @@ include 'header.php';
             2 => 'https://images.unsplash.com/photo-1541140532154-b024d705b90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
             3 => 'https://images.unsplash.com/photo-1599669454699-248893623440?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
             4 => 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
-            5 => 'https://images.unsplash.com/photo-1565849904461-04a58ad377e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
+            5 => 'https://images.unsplash.com/photo-1601593346740-925612772716?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
             6 => 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
-            7 => 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
-            8 => 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200'
+            7 => 'https://down-ph.img.susercontent.com/file/sg-11134201-22100-xxxfh5cjm4ivf8',
+            8 => 'https://5.imimg.com/data5/SELLER/Default/2022/12/GV/GU/OL/55907991/aluminum-laptop-stand-360-degree-rotatable-height-adjustable-for-all-laptops-up-to-16-inches--500x500.png'
         );
 
         $sql = "SELECT * FROM products";
