@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>🛍️ PinoyTech Finds</h1>
+        <h1><a href="index.php" style="text-decoration: none; color: inherit;">🛍️ PinoyTech Finds</a></h1>
         <nav class="nav-buttons">
             <ul>
                 <li><a href="index.php">Home</a></li>
