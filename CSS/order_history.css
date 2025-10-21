@@ -89,6 +89,48 @@ tr:hover {
   left: 100%;
 }
 
+.edit-btn {
+  background: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(76,175,80,0.3);
+}
+
+/* Manage button and container */
+.manage-container {
+  text-align: right;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.manage-btn {
+  background: #1e90ff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.manage-btn:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30,144,255,0.3);
+}
+
 /* No orders message */
 .no-orders {
   text-align: center;
