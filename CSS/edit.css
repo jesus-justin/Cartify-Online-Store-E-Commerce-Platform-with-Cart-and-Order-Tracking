@@ -1,0 +1,48 @@
+.edit-form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.update-btn {
+    background: #4CAF50 !important;
+}
+
+.delete-btn {
+    background: #f44336 !important;
+}
+
+.update-btn:hover {
+    background: #45a049 !important;
+}
+
+.delete-btn:hover {
+    background: #da190b !important;
+}
