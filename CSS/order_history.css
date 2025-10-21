@@ -107,31 +107,81 @@ tr:hover {
 
 /* Manage button and container */
 .manage-container {
-  text-align: right;
+  text-align: center;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  margin: 20px auto 40px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
 }
 
-.manage-btn {
-  background: #1e90ff;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
+.manage-btn, .back-btn {
   display: inline-block;
-  margin-bottom: 20px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  background: linear-gradient(135deg, #1e90ff, #00bfff);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.manage-btn:hover {
-  background: #0056b3;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(30,144,255,0.3);
+.manage-btn:hover, .back-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #00bfff, #1e90ff);
 }
 
-/* No orders message */
+.manage-btn:active, .back-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.manage-btn i, .back-btn i {
+  margin-right: 10px;
+  font-size: 1.1em;
+}
+
+.back-btn {
+  background: linear-gradient(135deg, #6c757d, #495057);
+}
+
+.back-btn:hover {
+  background: linear-gradient(135deg, #495057, #6c757d);
+}
+
+/* Add this for the button shine effect */
+.manage-btn::after, .back-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0.2) 40%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0.2) 60%,
+      rgba(255, 255, 255, 0.2) 100%
+  );
+  transform: rotate(45deg);
+  transition: 0.8s;
+}
+
+.manage-btn:hover::after, .back-btn:hover::after {
+  left: 100%;
+}
+
 .no-orders {
   text-align: center;
   margin: 50px 0;
@@ -171,6 +221,16 @@ footer::before {
 
   main h2 {
     font-size: 2rem;
+  }
+
+  .manage-btn {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+  
+  .manage-container {
+    margin: 15px auto 30px auto;
+    padding: 12px;
   }
 }
 
