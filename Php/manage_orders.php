@@ -3,11 +3,14 @@ include 'db_connect.php';
 include 'header.php';
 ?>
 <link rel="stylesheet" href="../css/order_history.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 <main>
     <h2>Manage Orders</h2>
     <div class="manage-container">
-        <a href="order_history.php" class="manage-btn">Back to Order History</a>
+        <a href="order_history.php" class="manage-btn back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Order History
+        </a>
     </div>
     <table>
         <tr>

@@ -107,31 +107,53 @@ tr:hover {
 
 /* Manage button and container */
 .manage-container {
-  text-align: right;
+  text-align: center;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  margin: 20px auto 40px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
 }
 
-.manage-btn {
-  background: #1e90ff;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
+.manage-btn, .back-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  background: linear-gradient(45deg, #ffffff 0%, #f0f8ff 100%);
+  color: #1e90ff;
   text-decoration: none;
+  border-radius: 25px;
   font-weight: bold;
   transition: all 0.3s ease;
-  display: inline-block;
-  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+  text-transform: none;
+  font-size: 1rem;
 }
 
-.manage-btn:hover {
-  background: #0056b3;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(30,144,255,0.3);
+.manage-btn:hover, .back-btn:hover {
+  background: linear-gradient(45deg, #1e90ff 0%, #00bfff 100%);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(30,144,255,0.3);
 }
 
-/* No orders message */
+.manage-btn:active, .back-btn:active {
+  transform: translateY(-1px);
+}
+
+.manage-btn i, .back-btn i {
+  margin-right: 10px;
+  font-size: 1.1em;
+}
+
+.back-btn {
+  /* Same as manage-btn for consistency */
+}
+
+
+
 .no-orders {
   text-align: center;
   margin: 50px 0;
@@ -171,6 +193,16 @@ footer::before {
 
   main h2 {
     font-size: 2rem;
+  }
+
+  .manage-btn {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+  
+  .manage-container {
+    margin: 15px auto 30px auto;
+    padding: 12px;
   }
 }
 
