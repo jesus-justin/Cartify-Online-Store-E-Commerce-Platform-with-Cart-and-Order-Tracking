@@ -118,31 +118,29 @@ tr:hover {
 
 .manage-btn, .back-btn {
   display: inline-block;
-  padding: 12px 30px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: white;
-  background: linear-gradient(135deg, #1e90ff, #00bfff);
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
+  padding: 6px 12px;
+  background: linear-gradient(45deg, #ffffff 0%, #f0f8ff 100%);
+  color: #1e90ff;
   text-decoration: none;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  font-weight: bold;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   position: relative;
   overflow: hidden;
+  text-transform: none;
+  font-size: 1rem;
 }
 
 .manage-btn:hover, .back-btn:hover {
+  background: linear-gradient(45deg, #1e90ff 0%, #00bfff 100%);
+  color: white;
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(135deg, #00bfff, #1e90ff);
+  box-shadow: 0 5px 15px rgba(30,144,255,0.3);
 }
 
 .manage-btn:active, .back-btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 .manage-btn i, .back-btn i {
@@ -151,36 +149,10 @@ tr:hover {
 }
 
 .back-btn {
-  background: linear-gradient(135deg, #6c757d, #495057);
+  /* Same as manage-btn for consistency */
 }
 
-.back-btn:hover {
-  background: linear-gradient(135deg, #495057, #6c757d);
-}
 
-/* Add this for the button shine effect */
-.manage-btn::after, .back-btn::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-      to bottom right,
-      rgba(255, 255, 255, 0.2) 0%,
-      rgba(255, 255, 255, 0.2) 40%,
-      rgba(255, 255, 255, 0.6) 50%,
-      rgba(255, 255, 255, 0.2) 60%,
-      rgba(255, 255, 255, 0.2) 100%
-  );
-  transform: rotate(45deg);
-  transition: 0.8s;
-}
-
-.manage-btn:hover::after, .back-btn:hover::after {
-  left: 100%;
-}
 
 .no-orders {
   text-align: center;
