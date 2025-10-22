@@ -46,6 +46,7 @@ include 'header.php';
         $sql = "SELECT * FROM products LIMIT $limit OFFSET $offset";
         $result = $conn->query($sql);
 
+        $displayed = 0;
         while($row = $result->fetch_assoc()) {
             echo "
             <div class='product-card'>
@@ -58,6 +59,12 @@ include 'header.php';
                     <button type='submit' name='add_to_cart'>Add to Cart</button>
                 </form>
             </div>";
+            $displayed++;
+        }
+
+        // Add empty cards to maintain 2x3 grid balance
+        for ($i = $displayed; $i < 6; $i++) {
+            echo "<div class='product-card empty'></div>";
         }
         ?>
     </div>
