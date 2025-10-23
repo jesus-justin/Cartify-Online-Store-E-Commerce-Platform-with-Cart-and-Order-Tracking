@@ -9,39 +9,83 @@ include 'header.php';
     <div class="product-grid">
         <?php
         $image_urls = array(
-            1 => 'https://images.unsplash.com/photo-1527814050087-3793815479db?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
-            2 => 'https://images.unsplash.com/photo-1541140532154-b024d705b90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
-            3 => 'https://images.unsplash.com/photo-1599669454699-248893623440?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
-            4 => 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
-            5 => 'https://images.unsplash.com/photo-1601593346740-925612772716?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
-            6 => 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
-            7 => 'https://down-ph.img.susercontent.com/file/sg-11134201-22100-xxxfh5cjm4ivf8',
-            8 => 'https://5.imimg.com/data5/SELLER/Default/2022/12/GV/GU/OL/55907991/aluminum-laptop-stand-360-degree-rotatable-height-adjustable-for-all-laptops-up-to-16-inches--500x500.png',
-            9 => 'https://images.unsplash.com/photo-1544117519-31a4b719223d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
-            10 => 'https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
-            11 => 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
-            12 => 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
-            13 => 'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
-            14 => 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
-            15 => 'https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
-            16 => 'https://images.unsplash.com/photo-1593640495253-23196b27a87f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
-            17 => 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
-            18 => 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
-            19 => 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
-            20 => 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
-            'external_drive' => 'https://www.westerndigital.com/content/dam/store/en-us/assets/products/portable/wd-my-passport/gallery/my-passport-2019-blue.png',
-            'webcam' => 'https://resource.logitech.com/content/dam/logitech/en/products/webcams/c920/gallery/c920-gallery-1.png',
-            'router' => 'https://dlcdnwebimgs.asus.com/gain/36E03309-3E91-4F44-9B1F-73F1E591D1BB/w1000/h732',
-            'powerbank' => 'https://anker.com/cdn/shop/products/A1287_TD01_V1_ecc0d558-9452-41a3-a620-f53c89dilocked_800x.png',
-            'microphone' => 'https://www.bluemic.com/cdn/shop/products/yeti_color_midnight_blue_2400x2400.png',
-            'graphics_card' => 'https://dlcdnwebimgs.asus.com/gain/8E667465-B207-4EE4-B475-A891594C5FC2/w1000/h732',
-            'tablet' => 'https://images.samsung.com/is/image/samsung/p6pim/levant/sm-x710nzaameb/gallery/levant-galaxy-tab-s8-wifi-x710-sm-x710nzaameb-thumb-531512124',
-            'vr_headset' => 'https://www.meta.com/quest/static/img/quest-3/quest-3.png',
-            'drone' => 'https://dji-official-fe.djicdn.com/dps/0b4cef970fbbd9b4402f6ef0d5e8f584.png',
-            'smart_hub' => 'https://images.samsung.com/is/image/samsung/p6pim/uk/gp-u999gtveecf/gallery/uk-smartthings-station-gp-u999gtveecf-thumb-535921197'
+            1 => 'https://images.unsplash.com/photo-1527814050087-3793815479db?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+            2 => 'https://images.unsplash.com/photo-1541140532154-b024d705b90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+            3 => 'https://images.unsplash.com/photo-1599669454699-248893623440?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+            4 => 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+            5 => 'https://images.unsplash.com/photo-1601593346740-925612772716?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+            6 => 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+            7 => 'https://images.unsplash.com/photo-1580894894514-7c6c0dca0cc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+            8 => 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+            9 => 'https://images.unsplash.com/photo-1544117519-31a4b719223d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+            10 => 'https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+            11 => 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+            12 => 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+            13 => 'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+            14 => 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+            15 => 'https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+            16 => 'https://images.unsplash.com/photo-1593640495253-23196b27a87f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+            17 => 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+            18 => 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+            19 => 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+            20 => 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
         );
 
-        // Pagination logic
+        // overrides keyed by a stable key; each entry has keywords (synonyms) for partial matching
+        $overrides = [
+            'external_hdd' => [
+                'keywords' => ['external hard drive', 'external hdd', 'portable hdd', 'external drive'],
+                'image' => 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'description' => 'Portable external hard drive — USB 3.0 / USB‑C, reliable storage for backups and large files.'
+            ],
+            'webcam' => [
+                'keywords' => ['webcam', 'camera webcam', 'usb webcam'],
+                'image' => 'https://images.unsplash.com/photo-1580906856300-2f5b9e5db0b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'description' => '1080p HD webcam with built-in mic — optimized for video calls and live streaming.'
+            ],
+            'router' => [
+                'keywords' => ['router', 'wi-fi router', 'wifi router', 'modem router'],
+                'image' => 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'description' => 'Dual-band Wi‑Fi router delivering stable range and high throughput for home networks.'
+            ],
+            'powerbank' => [
+                'keywords' => ['powerbank', 'power bank', 'portable charger'],
+                'image' => 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'description' => 'High-capacity power bank with fast-charge support for phones and tablets on the go.'
+            ],
+            'microphone' => [
+                'keywords' => ['microphone', 'mic', 'condensor microphone', 'condenser microphone'],
+                'image' => 'https://images.unsplash.com/photo-1512314889357-e157c22f938d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'description' => 'Condenser microphone — clear voice capture for streaming, podcasting, and calls.'
+            ],
+            'graphics_card' => [
+                'keywords' => ['graphics card', 'gpu', 'video card'],
+                'image' => 'https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'description' => 'High-performance graphics card for gaming and GPU-accelerated creative workloads.'
+            ],
+            'tablet' => [
+                'keywords' => ['tablet', 'ipad', 'android tablet'],
+                'image' => 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'description' => 'Slim tablet with vivid display — ideal for media consumption, reading, and light productivity.'
+            ],
+            'vr_headset' => [
+                'keywords' => ['vr headset', 'vr', 'virtual reality', 'vr goggles'],
+                'image' => 'https://images.unsplash.com/photo-1585386959984-a415522f3ef3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'description' => 'Immersive VR headset with wide field of view — perfect for gaming and virtual experiences.'
+            ],
+            'drone' => [
+                'keywords' => ['drone', 'quadrocopter', 'uav'],
+                'image' => 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'description' => 'Compact camera drone with stabilized flight and aerial photography capabilities.'
+            ],
+            'smart_home_hub' => [
+                'keywords' => ['smart home hub', 'smart hub', 'home hub', 'smart home'],
+                'image' => 'https://images.unsplash.com/photo-1580894894514-7c6c0dca0cc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'description' => 'Smart home hub to connect and control lights, locks, and sensors from one place.'
+            ]
+        ];
+
+        // Pagination logic (unchanged)
         $limit = 6;
         $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
         $offset = ($page - 1) * $limit;
@@ -57,31 +101,32 @@ include 'header.php';
         $result = $conn->query($sql);
 
         $displayed = 0;
-        $product_descriptions = array(
-            'external_drive' => 'High-speed 2TB portable storage solution with USB 3.0, perfect for backups',
-            'webcam' => 'Full HD 1080p webcam with auto-focus and low-light correction',
-            'router' => 'Dual-band WiFi 6 router with AI protection and gaming optimization',
-            'powerbank' => '26800mAh high-capacity power bank with fast charging support',
-            'microphone' => 'Professional USB condenser microphone with multiple pattern selection',
-            'graphics_card' => 'RTX 4070 8GB GDDR6X gaming graphics card with ray tracing',
-            'tablet' => '11-inch tablet with 128GB storage and S Pen support',
-            'vr_headset' => 'Advanced VR headset with 4K display and wireless connectivity',
-            'drone' => '4K camera drone with 3-axis gimbal and 30-minute flight time',
-            'smart_hub' => 'Smart home control center with voice assistant compatibility'
-        );
-
         while($row = $result->fetch_assoc()) {
-            $image_url = isset($image_urls[$row['id']]) ? $image_urls[$row['id']] : $image_urls['default'];
-            $description = isset($product_descriptions[$row['id']]) ? $product_descriptions[$row['id']] : $row['description'];
-            
+            $name = $row['name'];
+            $name_lc = strtolower(trim($name));
+            $img_src = $image_urls[$row['id']] ?? 'https://via.placeholder.com/800x600?text=No+Image';
+            $desc = $row['description'] ?? '';
+
+            // robust matching: check override keywords (partial, case-insensitive)
+            foreach ($overrides as $ov) {
+                foreach ($ov['keywords'] as $kw) {
+                    if (stripos($name_lc, strtolower($kw)) !== false) {
+                        $img_src = $ov['image'];
+                        $desc = $ov['description'];
+                        break 2;
+                    }
+                }
+            }
+
+            // output card (unchanged structure)
             echo "
             <div class='product-card'>
-                <img src='{$image_url}' alt='{$row['name']}'>
-                <h3>{$row['name']}</h3>
-                <p>{$description}</p>
-                <p><strong>₱{$row['price']}</strong></p>
+                <img src='" . htmlspecialchars($img_src, ENT_QUOTES) . "' alt=\"" . htmlspecialchars($name, ENT_QUOTES) . "\">
+                <h3>" . htmlspecialchars($name) . "</h3>
+                <p>" . htmlspecialchars($desc) . "</p>
+                <p><strong>₱" . number_format((float)$row['price'], 2) . "</strong></p>
                 <form method='post' action='cart.php'>
-                    <input type='hidden' name='product_id' value='{$row['id']}'>
+                    <input type='hidden' name='product_id' value='" . htmlspecialchars($row['id']) . "'>
                     <button type='submit' name='add_to_cart'>Add to Cart</button>
                 </form>
             </div>";

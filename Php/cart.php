@@ -24,7 +24,7 @@ if (isset($_POST['add_to_cart'])) {
             $total += $subtotal;
             echo "<tr>
                     <td>{$row['name']}</td>
-                    <td>₱{$row['price']}</td>
+                    <td>₱" . number_format((float)$row['price'], 2) . "</td>
                     <td>{$row['quantity']}</td>
                   </tr>";
         }
