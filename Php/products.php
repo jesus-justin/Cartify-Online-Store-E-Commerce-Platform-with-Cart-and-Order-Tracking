@@ -28,7 +28,17 @@ include 'header.php';
             17 => 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
             18 => 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
             19 => 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
-            20 => 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200'
+            20 => 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200',
+            'external_drive' => 'https://www.westerndigital.com/content/dam/store/en-us/assets/products/portable/wd-my-passport/gallery/my-passport-2019-blue.png',
+            'webcam' => 'https://resource.logitech.com/content/dam/logitech/en/products/webcams/c920/gallery/c920-gallery-1.png',
+            'router' => 'https://dlcdnwebimgs.asus.com/gain/36E03309-3E91-4F44-9B1F-73F1E591D1BB/w1000/h732',
+            'powerbank' => 'https://anker.com/cdn/shop/products/A1287_TD01_V1_ecc0d558-9452-41a3-a620-f53c89dilocked_800x.png',
+            'microphone' => 'https://www.bluemic.com/cdn/shop/products/yeti_color_midnight_blue_2400x2400.png',
+            'graphics_card' => 'https://dlcdnwebimgs.asus.com/gain/8E667465-B207-4EE4-B475-A891594C5FC2/w1000/h732',
+            'tablet' => 'https://images.samsung.com/is/image/samsung/p6pim/levant/sm-x710nzaameb/gallery/levant-galaxy-tab-s8-wifi-x710-sm-x710nzaameb-thumb-531512124',
+            'vr_headset' => 'https://www.meta.com/quest/static/img/quest-3/quest-3.png',
+            'drone' => 'https://dji-official-fe.djicdn.com/dps/0b4cef970fbbd9b4402f6ef0d5e8f584.png',
+            'smart_hub' => 'https://images.samsung.com/is/image/samsung/p6pim/uk/gp-u999gtveecf/gallery/uk-smartthings-station-gp-u999gtveecf-thumb-535921197'
         );
 
         // Pagination logic
@@ -47,12 +57,28 @@ include 'header.php';
         $result = $conn->query($sql);
 
         $displayed = 0;
+        $product_descriptions = array(
+            'external_drive' => 'High-speed 2TB portable storage solution with USB 3.0, perfect for backups',
+            'webcam' => 'Full HD 1080p webcam with auto-focus and low-light correction',
+            'router' => 'Dual-band WiFi 6 router with AI protection and gaming optimization',
+            'powerbank' => '26800mAh high-capacity power bank with fast charging support',
+            'microphone' => 'Professional USB condenser microphone with multiple pattern selection',
+            'graphics_card' => 'RTX 4070 8GB GDDR6X gaming graphics card with ray tracing',
+            'tablet' => '11-inch tablet with 128GB storage and S Pen support',
+            'vr_headset' => 'Advanced VR headset with 4K display and wireless connectivity',
+            'drone' => '4K camera drone with 3-axis gimbal and 30-minute flight time',
+            'smart_hub' => 'Smart home control center with voice assistant compatibility'
+        );
+
         while($row = $result->fetch_assoc()) {
+            $image_url = isset($image_urls[$row['id']]) ? $image_urls[$row['id']] : $image_urls['default'];
+            $description = isset($product_descriptions[$row['id']]) ? $product_descriptions[$row['id']] : $row['description'];
+            
             echo "
             <div class='product-card'>
-                <img src='{$image_urls[$row['id']]}' alt='{$row['name']}'>
+                <img src='{$image_url}' alt='{$row['name']}'>
                 <h3>{$row['name']}</h3>
-                <p>{$row['description']}</p>
+                <p>{$description}</p>
                 <p><strong>₱{$row['price']}</strong></p>
                 <form method='post' action='cart.php'>
                     <input type='hidden' name='product_id' value='{$row['id']}'>
