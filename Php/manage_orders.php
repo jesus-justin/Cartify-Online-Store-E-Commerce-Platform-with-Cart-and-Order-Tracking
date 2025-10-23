@@ -26,7 +26,7 @@ include 'header.php';
             echo "<tr>
                     <td>{$row['id']}</td>
                     <td>{$row['customer_name']}</td>
-                    <td>₱{$row['total']}</td>
+                    <td>₱" . number_format((float)$row['total'], 2) . "</td>
                     <td>{$row['order_date']}</td>
                     <td>
                         <a href='edit.php?id={$row['id']}' class='edit-btn'>Edit</a>
