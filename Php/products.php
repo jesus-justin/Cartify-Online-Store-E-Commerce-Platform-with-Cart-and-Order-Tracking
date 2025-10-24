@@ -60,7 +60,7 @@ include 'header.php';
             ],
             'graphics_card' => [
                 'keywords' => ['graphics card', 'gpu', 'video card'],
-                'image' => 'https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image' => 'https://www.elryan.com/img/600/600/resize/catalog/product/6/6/665edb37e7f15a0056371a2a5794871w-74987.jpg',
                 'description' => 'High-performance graphics card for gaming and GPU-accelerated creative workloads.'
             ],
             'tablet' => [

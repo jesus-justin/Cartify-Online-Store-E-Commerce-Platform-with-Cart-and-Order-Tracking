@@ -24,3 +24,5 @@
 - [x] Verify the edit by reading the updated file to ensure the override is correctly updated.
 - [x] Update 'microphone' entry in the $overrides array in Php/products.php with the new image URL for microphone.
 - [x] Verify the edit by reading the updated file to ensure the override is correctly updated.
+- [x] Update 'graphics_card' entry in the $overrides array in Php/products.php with the new image URL for graphics card.
+- [x] Verify the edit by reading the updated file to ensure the override is correctly updated.
