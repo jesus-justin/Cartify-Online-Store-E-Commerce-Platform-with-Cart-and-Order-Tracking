@@ -6,3 +6,7 @@
 - [x] Verify the edit by reading the updated file to ensure the override is correctly added.
 - [x] Add 'smart_watch' entry to the $overrides array in Php/products.php with keywords ['smart watch', 'smartwatch'], the provided image URL, and a suitable description.
 - [x] Verify the edit by reading the updated file to ensure the override is correctly added.
+- [x] Update 'external_hdd' entry in the $overrides array in Php/products.php with the new image URL for external hard drive.
+- [x] Verify the edit by reading the updated file to ensure the override is correctly updated.
+- [x] Update 'webcam' entry in the $overrides array in Php/products.php with the new image URL for webcam.
+- [x] Verify the edit by reading the updated file to ensure the override is correctly updated.

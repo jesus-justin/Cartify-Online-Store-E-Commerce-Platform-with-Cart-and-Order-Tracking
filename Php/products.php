@@ -35,12 +35,12 @@ include 'header.php';
         $overrides = [
             'external_hdd' => [
                 'keywords' => ['external hard drive', 'external hdd', 'portable hdd', 'external drive'],
-                'image' => 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image' => 'https://i.ebayimg.com/images/g/MvcAAOSwA8Bj2jEa/s-l400.jpg',
                 'description' => 'Portable external hard drive — USB 3.0 / USB‑C, reliable storage for backups and large files.'
             ],
             'webcam' => [
                 'keywords' => ['webcam', 'camera webcam', 'usb webcam'],
-                'image' => 'https://images.unsplash.com/photo-1580906856300-2f5b9e5db0b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image' => 'https://m.media-amazon.com/images/I/61-TJMkG7LL.jpg',
                 'description' => '1080p HD webcam with built-in mic — optimized for video calls and live streaming.'
             ],
             'router' => [
