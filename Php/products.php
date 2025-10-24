@@ -90,7 +90,7 @@ include 'header.php';
             ],
             'laptop_stand' => [
                 'keywords' => ['laptop stand', 'stand'],
-                'image' => 'https://m.media-amazon.com/images/I/71gX7yNLE4L._AC_SL1500_.jpg',
+                'image' => 'https://www.syntech.co.za/wp-content/uploads/2021/01/RD-GCP500_wr_04-1-600x600.jpg',
                 'description' => 'Adjustable laptop stand for ergonomic viewing and cooling.'
             ],
             'smart_watch' => [

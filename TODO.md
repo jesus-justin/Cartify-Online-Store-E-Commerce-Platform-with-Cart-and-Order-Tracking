@@ -16,3 +16,5 @@
 - [x] Verify the edit by reading the updated file to ensure the override is correctly updated.
 - [x] Update 'webcam' entry again in the $overrides array in Php/products.php with the new image URL for webcam.
 - [x] Verify the edit by reading the updated file to ensure the override is correctly updated.
+- [x] Update 'laptop_stand' entry in the $overrides array in Php/products.php with the new image URL for laptop stand.
+- [x] Verify the edit by reading the updated file to ensure the override is correctly updated.
