@@ -82,6 +82,11 @@ include 'header.php';
                 'keywords' => ['smart home hub', 'smart hub', 'home hub', 'smart home'],
                 'image' => 'https://images.unsplash.com/photo-1580894894514-7c6c0dca0cc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
                 'description' => 'Smart home hub to connect and control lights, locks, and sensors from one place.'
+            ],
+            'usb_charger' => [
+                'keywords' => ['usb charger', 'charger'],
+                'image' => 'https://alexnld.com/wp-content/uploads/2022/02/1f8dc3a2-d3b3-4a77-8985-554c6402ae79.jpg',
+                'description' => 'Dual-port USB charger with 20W USB-C PD and USB-A QC3.0 support for fast charging.'
             ]
         ];
 
