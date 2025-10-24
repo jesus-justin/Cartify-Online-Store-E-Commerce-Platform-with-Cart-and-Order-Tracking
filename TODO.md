@@ -10,3 +10,9 @@
 - [x] Verify the edit by reading the updated file to ensure the override is correctly updated.
 - [x] Update 'webcam' entry in the $overrides array in Php/products.php with the new image URL for webcam.
 - [x] Verify the edit by reading the updated file to ensure the override is correctly updated.
+- [x] Update 'router' entry in the $overrides array in Php/products.php with the new image URL for router.
+- [x] Verify the edit by reading the updated file to ensure the override is correctly updated.
+- [x] Update 'webcam' entry again in the $overrides array in Php/products.php with the new image URL for webcam.
+- [x] Verify the edit by reading the updated file to ensure the override is correctly updated.
+- [x] Update 'webcam' entry again in the $overrides array in Php/products.php with the new image URL for webcam.
+- [x] Verify the edit by reading the updated file to ensure the override is correctly updated.

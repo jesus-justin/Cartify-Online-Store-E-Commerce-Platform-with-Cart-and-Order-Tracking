@@ -40,12 +40,12 @@ include 'header.php';
             ],
             'webcam' => [
                 'keywords' => ['webcam', 'camera webcam', 'usb webcam'],
-                'image' => 'https://m.media-amazon.com/images/I/61-TJMkG7LL.jpg',
+                'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvS2dVhQsRkx7cgVRCqjh1QVEjrOm89yDDvQ&s',
                 'description' => '1080p HD webcam with built-in mic — optimized for video calls and live streaming.'
             ],
             'router' => [
                 'keywords' => ['router', 'wi-fi router', 'wifi router', 'modem router'],
-                'image' => 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image' => 'https://ecommerce.datablitz.com.ph/cdn/shop/files/efasdfdsv_800x.jpg?v=1694485683',
                 'description' => 'Dual-band Wi‑Fi router delivering stable range and high throughput for home networks.'
             ],
             'powerbank' => [
