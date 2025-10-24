@@ -18,3 +18,9 @@
 - [x] Verify the edit by reading the updated file to ensure the override is correctly updated.
 - [x] Update 'laptop_stand' entry in the $overrides array in Php/products.php with the new image URL for laptop stand.
 - [x] Verify the edit by reading the updated file to ensure the override is correctly updated.
+- [x] Update 'smart_watch' entry in the $overrides array in Php/products.php with the new image URL for smart watch.
+- [x] Verify the edit by reading the updated file to ensure the override is correctly updated.
+- [x] Update 'powerbank' entry in the $overrides array in Php/products.php with the new image URL for power bank.
+- [x] Verify the edit by reading the updated file to ensure the override is correctly updated.
+- [x] Update 'microphone' entry in the $overrides array in Php/products.php with the new image URL for microphone.
+- [x] Verify the edit by reading the updated file to ensure the override is correctly updated.

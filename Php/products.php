@@ -50,12 +50,12 @@ include 'header.php';
             ],
             'powerbank' => [
                 'keywords' => ['powerbank', 'power bank', 'portable charger'],
-                'image' => 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_IzI4uq4LVRcxwubIig5RmtDwCriWPYEtmQ&s',
                 'description' => 'High-capacity power bank with fast-charge support for phones and tablets on the go.'
             ],
             'microphone' => [
                 'keywords' => ['microphone', 'mic', 'condensor microphone', 'condenser microphone'],
-                'image' => 'https://images.unsplash.com/photo-1512314889357-e157c22f938d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image' => 'https://i5.walmartimages.com/seo/TONOR-Gaming-Mic-USB-Microphone-for-PC-PS4-5-Cardioid-Condenser-Mic-with-Adjustable-RGB-Modes_a6e768d6-f3d4-4cc9-9c27-cd8de7392c2a.35ff669717fcf714537b7a5b068b684b.jpeg',
                 'description' => 'Condenser microphone — clear voice capture for streaming, podcasting, and calls.'
             ],
             'graphics_card' => [
@@ -95,7 +95,7 @@ include 'header.php';
             ],
             'smart_watch' => [
                 'keywords' => ['smart watch', 'smartwatch'],
-                'image' => 'https://i5.walmartimages.com/asr/2615d8f0-12da-4eb7-ae2e-6bdb5a0a0e30.a279d99cfcfc7912748f1c464fbbede4.jpeg?odnHeight=432&odnWidth=320&odnBg=FFFFFF',
+                'image' => 'https://ph.garmin.com/m/ph/g/products/forerunner965.jpg',
                 'description' => 'Smartwatch with fitness tracking, notifications, and health monitoring features.'
             ]
         ];
