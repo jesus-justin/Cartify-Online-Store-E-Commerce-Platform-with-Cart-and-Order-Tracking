@@ -87,6 +87,16 @@ include 'header.php';
                 'keywords' => ['usb charger', 'charger'],
                 'image' => 'https://alexnld.com/wp-content/uploads/2022/02/1f8dc3a2-d3b3-4a77-8985-554c6402ae79.jpg',
                 'description' => 'Dual-port USB charger with 20W USB-C PD and USB-A QC3.0 support for fast charging.'
+            ],
+            'laptop_stand' => [
+                'keywords' => ['laptop stand', 'stand'],
+                'image' => 'https://m.media-amazon.com/images/I/71gX7yNLE4L._AC_SL1500_.jpg',
+                'description' => 'Adjustable laptop stand for ergonomic viewing and cooling.'
+            ],
+            'smart_watch' => [
+                'keywords' => ['smart watch', 'smartwatch'],
+                'image' => 'https://i5.walmartimages.com/asr/2615d8f0-12da-4eb7-ae2e-6bdb5a0a0e30.a279d99cfcfc7912748f1c464fbbede4.jpeg?odnHeight=432&odnWidth=320&odnBg=FFFFFF',
+                'description' => 'Smartwatch with fitness tracking, notifications, and health monitoring features.'
             ]
         ];
 
