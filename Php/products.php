@@ -80,7 +80,7 @@ include 'header.php';
             ],
             'smart_home_hub' => [
                 'keywords' => ['smart home hub', 'smart hub', 'home hub', 'smart home'],
-                'image' => 'https://images.unsplash.com/photo-1580894894514-7c6c0dca0cc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image' => 'https://p.turbosquid.com/ts-thumb/wX/Gfj6eN/mJ/001/jpg/1656681452/600x600/fit_q87/5ffea264948b10fb5bd4e1db33e2e90370895fa6/001.jpg',
                 'description' => 'Smart home hub to connect and control lights, locks, and sensors from one place.'
             ],
             'usb_charger' => [
