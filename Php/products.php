@@ -83,6 +83,11 @@ include 'header.php';
                 'image' => 'https://p.turbosquid.com/ts-thumb/wX/Gfj6eN/mJ/001/jpg/1656681452/600x600/fit_q87/5ffea264948b10fb5bd4e1db33e2e90370895fa6/001.jpg',
                 'description' => 'Smart home hub to connect and control lights, locks, and sensors from one place.'
             ],
+            'wireless_earbuds' => [
+                'keywords' => ['wireless earbuds', 'earbuds', 'tws earbuds'],
+                'image' => 'https://www.wellypaudio.com/uploads/Auto-Pairing-Wireless-TWS-Gaming-Earbuds.jpg',
+                'description' => 'Wireless earbuds with true wireless stereo technology for seamless audio experience.'
+            ],
             'wireless_mouse' => [
                 'keywords' => ['wireless mouse', 'mouse', 'wireless'],
                 'image' => 'https://shop.tti.com.ph/pub/media/catalog/product/cache/07dc43095bd992476134f3022ceb9abf/h/i/high_resolution_png-g502_lightspeed-gallery-2.png',
@@ -112,6 +117,16 @@ include 'header.php';
                 'keywords' => ['smart watch', 'smartwatch'],
                 'image' => 'https://ph.garmin.com/m/ph/g/products/forerunner965.jpg',
                 'description' => 'Smartwatch with fitness tracking, notifications, and health monitoring features.'
+            ],
+            'phone_case' => [
+                'keywords' => ['phone case', 'phonecase', 'case', 'mobile case'],
+                'image' => 'https://minibay.in/wp-content/uploads/2025/09/white-58-600x600.jpg',
+                'description' => 'Protective phone case featuring a stylish design and shock-absorbent materials.'
+            ],
+            'bluetooth_speaker' => [
+                'keywords' => ['bluetooth speaker', 'speaker', 'bluetooth'],
+                'image' => 'https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_600,h_600/https://fantech.ph/wp-content/uploads/2022/01/clipboard_image_ad76f34ab15a3563-600x600.png',
+                'description' => 'Portable Bluetooth speaker with high-quality sound and wireless connectivity.'
             ]
         ];
 
