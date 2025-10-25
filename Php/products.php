@@ -88,6 +88,11 @@ include 'header.php';
                 'image' => 'https://shop.tti.com.ph/pub/media/catalog/product/cache/07dc43095bd992476134f3022ceb9abf/h/i/high_resolution_png-g502_lightspeed-gallery-2.png',
                 'description' => 'Wireless mouse with ergonomic design and precise tracking for productivity.'
             ],
+            'mechanical_keyboard' => [
+                'keywords' => ['mechanical keyboard', 'keyboard', 'mechanical'],
+                'image' => 'https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_600,h_600/https://fantech.ph/wp-content/uploads/2023/05/b2f71ac7642d4a6ea189317e5d61a37-600x600.jpg',
+                'description' => 'Mechanical keyboard with tactile switches and durable build for enhanced typing experience.'
+            ],
             'usb_charger' => [
                 'keywords' => ['usb charger', 'charger'],
                 'image' => 'https://alexnld.com/wp-content/uploads/2022/02/1f8dc3a2-d3b3-4a77-8985-554c6402ae79.jpg',
