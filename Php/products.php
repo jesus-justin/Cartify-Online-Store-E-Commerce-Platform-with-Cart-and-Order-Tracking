@@ -93,6 +93,11 @@ include 'header.php';
                 'image' => 'https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_600,h_600/https://fantech.ph/wp-content/uploads/2023/05/b2f71ac7642d4a6ea189317e5d61a37-600x600.jpg',
                 'description' => 'Mechanical keyboard with tactile switches and durable build for enhanced typing experience.'
             ],
+            'headset' => [
+                'keywords' => ['headset', 'headphones', 'earphones'],
+                'image' => 'https://m.media-amazon.com/images/I/81o785DXfyL.jpg',
+                'description' => 'High-quality headset with immersive sound and comfortable design for music and calls.'
+            ],
             'usb_charger' => [
                 'keywords' => ['usb charger', 'charger'],
                 'image' => 'https://alexnld.com/wp-content/uploads/2022/02/1f8dc3a2-d3b3-4a77-8985-554c6402ae79.jpg',
