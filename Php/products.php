@@ -65,7 +65,7 @@ include 'header.php';
             ],
             'tablet' => [
                 'keywords' => ['tablet', 'ipad', 'android tablet'],
-                'image' => 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image' => 'https://zoneofdeals.com/wp-content/uploads/2025/08/lenovo-legion-tab-3.jpg',
                 'description' => 'Slim tablet with vivid display — ideal for media consumption, reading, and light productivity.'
             ],
             'vr_headset' => [
