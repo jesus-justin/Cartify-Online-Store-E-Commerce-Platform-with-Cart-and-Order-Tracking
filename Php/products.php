@@ -70,7 +70,7 @@ include 'header.php';
             ],
             'vr_headset' => [
                 'keywords' => ['vr headset', 'vr', 'virtual reality', 'vr goggles'],
-                'image' => 'https://images.unsplash.com/photo-1585386959984-a415522f3ef3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image' => 'https://substackcdn.com/image/fetch/$s_!L4Eu!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fca0a6e37-ed11-4feb-b69a-6ee4a570e409_600x600.jpeg',
                 'description' => 'Immersive VR headset with wide field of view — perfect for gaming and virtual experiences.'
             ],
             'drone' => [
