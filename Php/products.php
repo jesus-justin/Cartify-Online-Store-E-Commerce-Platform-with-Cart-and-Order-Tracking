@@ -75,7 +75,7 @@ include 'header.php';
             ],
             'drone' => [
                 'keywords' => ['drone', 'quadrocopter', 'uav'],
-                'image' => 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image' => 'https://discountstore.pk/cdn/shop/files/D97-GPS-Drone-with-8K-UHD-Camera-Foldable-Drones-for-Adults-Beginners-RC-Quadcopter-Drone-Brushless-Motor-VR-Mode-GPS-Auto-Follow_8d720195-da77-4e6b-a55e-093164d85efa.0934a43569cb6cef.webp?v=1735375064',
                 'description' => 'Compact camera drone with stabilized flight and aerial photography capabilities.'
             ],
             'smart_home_hub' => [
