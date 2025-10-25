@@ -83,6 +83,11 @@ include 'header.php';
                 'image' => 'https://p.turbosquid.com/ts-thumb/wX/Gfj6eN/mJ/001/jpg/1656681452/600x600/fit_q87/5ffea264948b10fb5bd4e1db33e2e90370895fa6/001.jpg',
                 'description' => 'Smart home hub to connect and control lights, locks, and sensors from one place.'
             ],
+            'wireless_mouse' => [
+                'keywords' => ['wireless mouse', 'mouse', 'wireless'],
+                'image' => 'https://shop.tti.com.ph/pub/media/catalog/product/cache/07dc43095bd992476134f3022ceb9abf/h/i/high_resolution_png-g502_lightspeed-gallery-2.png',
+                'description' => 'Wireless mouse with ergonomic design and precise tracking for productivity.'
+            ],
             'usb_charger' => [
                 'keywords' => ['usb charger', 'charger'],
                 'image' => 'https://alexnld.com/wp-content/uploads/2022/02/1f8dc3a2-d3b3-4a77-8985-554c6402ae79.jpg',
