@@ -6,6 +6,22 @@ include 'header.php';
 
 <main>
     <h2>Our Products</h2>
+    <!-- Search + Sort UI -->
+    <form method="get" class="product-filters" style="margin: 10px 0; display:flex; gap:8px; align-items:center;">
+        <input type="text" name="q" placeholder="Search products..." value="<?php echo htmlspecialchars($_GET['q'] ?? '', ENT_QUOTES); ?>">
+        <select name="sort">
+            <option value="" <?php echo empty($_GET['sort']) ? 'selected' : ''; ?>>Sort</option>
+            <option value="price_asc"  <?php echo (($_GET['sort'] ?? '')==='price_asc')?'selected':''; ?>>Price: Low to High</option>
+            <option value="price_desc" <?php echo (($_GET['sort'] ?? '')==='price_desc')?'selected':''; ?>>Price: High to Low</option>
+            <option value="name_asc"   <?php echo (($_GET['sort'] ?? '')==='name_asc')?'selected':''; ?>>Name: A–Z</option>
+            <option value="name_desc"  <?php echo (($_GET['sort'] ?? '')==='name_desc')?'selected':''; ?>>Name: Z–A</option>
+        </select>
+        <button type="submit" class="btn">Apply</button>
+        <?php if (!empty($_GET['q']) || !empty($_GET['sort'])): ?>
+            <a class="btn" href="?page=1">Reset</a>
+        <?php endif; ?>
+    </form>
+
     <div class="product-grid">
         <?php
         $image_urls = array(
@@ -130,19 +146,35 @@ include 'header.php';
             ]
         ];
 
+        // Search and sort (whitelisted + escaped)
+        $q = isset($_GET['q']) ? trim($_GET['q']) : '';
+        $sort = isset($_GET['sort']) ? trim($_GET['sort']) : '';
+        $q_esc = $conn->real_escape_string($q);
+        $where = $q !== '' ? "WHERE name LIKE '%$q_esc%' OR description LIKE '%$q_esc%'" : '';
+
+        $allowedSort = ['price_asc','price_desc','name_asc','name_desc'];
+        if (!in_array($sort, $allowedSort)) { $sort = ''; }
+        switch ($sort) {
+            case 'price_asc':  $order = 'ORDER BY price ASC'; break;
+            case 'price_desc': $order = 'ORDER BY price DESC'; break;
+            case 'name_asc':   $order = 'ORDER BY name ASC'; break;
+            case 'name_desc':  $order = 'ORDER BY name DESC'; break;
+            default:           $order = 'ORDER BY id ASC';
+        }
+
         // Pagination logic (unchanged)
         $limit = 6;
         $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
         $offset = ($page - 1) * $limit;
 
-        // Get total products count
-        $total_sql = "SELECT COUNT(*) as total FROM products";
+        // Get total products count (with filter)
+        $total_sql = "SELECT COUNT(*) as total FROM products $where";
         $total_result = $conn->query($total_sql);
         $total_row = $total_result->fetch_assoc();
         $total_products = $total_row['total'];
         $total_pages = ceil($total_products / $limit);
 
-        $sql = "SELECT * FROM products LIMIT $limit OFFSET $offset";
+        $sql = "SELECT * FROM products $where $order LIMIT $limit OFFSET $offset";
         $result = $conn->query($sql);
 
         $displayed = 0;
@@ -166,7 +198,9 @@ include 'header.php';
             // output card (unchanged structure)
             echo "
             <div class='product-card'>
-                <img src='" . htmlspecialchars($img_src, ENT_QUOTES) . "' alt=\"" . htmlspecialchars($name, ENT_QUOTES) . "\">
+                <img src='" . htmlspecialchars($img_src, ENT_QUOTES) . "'
+                     onerror=\"this.onerror=null;this.src='https://via.placeholder.com/800x600?text=No+Image'\"
+                     alt=\"" . htmlspecialchars($name, ENT_QUOTES) . "\">
                 <h3>" . htmlspecialchars($name) . "</h3>
                 <p>" . htmlspecialchars($desc) . "</p>
                 <p><strong>₱" . number_format((float)$row['price'], 2) . "</strong></p>
@@ -188,21 +222,24 @@ include 'header.php';
     <!-- Pagination -->
     <div class="pagination">
         <?php
+        // Preserve query across pagination
+        $qs = (!empty($q) || !empty($sort)) ? ('&q=' . urlencode($q) . '&sort=' . urlencode($sort)) : '';
+
         if ($total_pages > 1) {
             // Previous button
             if ($page > 1) {
-                echo "<a href='?page=" . ($page - 1) . "' class='btn'>Previous</a>";
+                echo "<a href='?page=" . ($page - 1) . $qs . "' class='btn'>Previous</a>";
             }
 
             // Page numbers
             for ($i = 1; $i <= $total_pages; $i++) {
                 $active = ($i == $page) ? 'active' : '';
-                echo "<a href='?page=$i' class='btn $active'>$i</a>";
+                echo "<a href='?page=$i" . $qs . "' class='btn $active'>$i</a>";
             }
 
             // Next button
             if ($page < $total_pages) {
-                echo "<a href='?page=" . ($page + 1) . "' class='btn'>Next</a>";
+                echo "<a href='?page=" . ($page + 1) . $qs . "' class='btn'>Next</a>";
             }
         }
         ?>
