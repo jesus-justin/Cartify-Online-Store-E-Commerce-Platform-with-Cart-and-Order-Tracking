@@ -26,8 +26,22 @@
 - [x] Verify the edit by reading the updated file to ensure the override is correctly updated.
 - [x] Update 'graphics_card' entry in the $overrides array in Php/products.php with the new image URL for graphics card.
 - [x] Verify the edit by reading the updated file to ensure the override is correctly updated.
-- [ ] Add search box and sort dropdown to Php/products.php.
-- [ ] Filter SQL with WHERE when q is provided; whitelist ORDER BY for sort.
-- [ ] Preserve q and sort in pagination links.
-- [ ] Add onerror fallback for product images to avoid broken thumbnails.
-- [ ] Smoke-test with queries + pagination (e.g., q=headset, sort=price_desc).
+- [x] Add search box and sort dropdown to Php/products.php.
+- [x] Filter SQL with WHERE when q is provided; whitelist ORDER BY for sort.
+- [x] Preserve q and sort in pagination links.
+- [x] Add onerror fallback for product images to avoid broken thumbnails.
+- [x] Smoke-test with queries + pagination (e.g., q=headset, sort=price_desc).
+
+## Fix cart table missing error
+- [x] Created `sql/create_cart_table.sql` file
+- [x] **EXECUTED SQL in phpMyAdmin to create cart table**
+- [x] Verified cart.php loads without errors
+- [x] Verified checkout.php loads without errors
+
+## Visual Enhancements for index.php
+- [x] Create css/index_animations.css with fade-in, hover effects, and gradient animations
+- [x] Add animated hero banner with gradient background to index.php
+- [x] Add floating scroll-to-top button with smooth animation
+- [x] Add staggered fade-in animation for product cards
+- [x] Ensure all existing functionality remains intact
+- [ ] Test animations across different browsers (Chrome, Firefox, Edge)
