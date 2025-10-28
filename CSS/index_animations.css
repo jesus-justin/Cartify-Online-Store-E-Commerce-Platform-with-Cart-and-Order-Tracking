@@ -15,6 +15,8 @@ main {
 
 /* Animated gradient hero banner */
 .hero-banner {
+    position: relative;
+    overflow: hidden;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     background-size: 200% 200%;
     animation: gradientShift 8s ease infinite;
@@ -55,52 +57,45 @@ main {
     to { transform: translateY(0); opacity: 1; }
 }
 
-/* Product card hover animation */
-.product-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-}
-
-.product-card img {
-    transition: transform 0.4s ease;
-}
-
-.product-card:hover img {
-    transform: scale(1.1);
-}
-
-/* Button pulse animation */
-.product-card button {
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.product-card button::before {
-    content: '';
+/* Delivery cart animation */
+.delivery-cart-wrapper {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.3);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
+    top: 55%;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 5;
 }
 
-.product-card button:hover::before {
-    width: 300px;
-    height: 300px;
+.delivery-cart {
+    width: 80px;
+    height: auto;
+    opacity: 0.95;
+    animation: slideCart 10s linear infinite;
 }
 
-.product-card button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+@keyframes slideCart {
+    0% {
+        transform: translateX(-30vw) translateY(0);
+        opacity: 0;
+    }
+    10% { opacity: 0.95; }
+    50% { transform: translateX(50vw) translateY(-5px); }
+    90% { opacity: 0.95; }
+    100% {
+        transform: translateX(130vw) translateY(0);
+        opacity: 0;
+    }
+}
+
+.delivery-cart .wheel {
+    transform-origin: center;
+    animation: wheelSpin 0.6s linear infinite;
+}
+
+@keyframes wheelSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 /* Floating scroll-to-top button */
@@ -133,45 +128,8 @@ main {
     box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
-/* Stagger animation for product grid items */
-.product-card {
-    animation: fadeInUp 0.6s ease-out backwards;
-}
-
-.product-card:nth-child(1) { animation-delay: 0.1s; }
-.product-card:nth-child(2) { animation-delay: 0.2s; }
-.product-card:nth-child(3) { animation-delay: 0.3s; }
-.product-card:nth-child(4) { animation-delay: 0.4s; }
-.product-card:nth-child(5) { animation-delay: 0.5s; }
-.product-card:nth-child(6) { animation-delay: 0.6s; }
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Search box animation */
-.product-filters input[type="text"] {
-    transition: all 0.3s ease;
-}
-
-.product-filters input[type="text"]:focus {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-}
-
-/* Pagination button animation */
-.pagination .btn {
-    transition: all 0.3s ease;
-}
-
-.pagination .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+@media (max-width: 700px) {
+    .delivery-cart-wrapper { display: none; }
+    .hero-banner h1 { font-size: 2em; }
+    .hero-banner p { font-size: 1em; }
 }

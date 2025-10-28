@@ -1,0 +1,115 @@
+/* Center the search wrapper */
+.search-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 30px 0;
+    width: 100%;
+}
+
+/* Style the search form */
+.product-filters {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 900px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* Larger search input */
+.product-filters input[type="text"] {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+    padding: 12px 18px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.product-filters input[type="text"]:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Larger select dropdown */
+.product-filters select {
+    padding: 12px 18px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    min-width: 180px;
+}
+
+.product-filters select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Larger buttons */
+.product-filters .btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 500;
+}
+
+.product-filters .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.product-filters .btn:active {
+    transform: translateY(0);
+}
+
+/* Reset button style */
+.product-filters a.btn {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.product-filters a.btn:hover {
+    background: #d0d0d0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .product-filters {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .product-filters input[type="text"],
+    .product-filters select,
+    .product-filters .btn {
+        width: 100%;
+        min-width: auto;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-filters input[type="text"],
+    .product-filters select,
+    .product-filters .btn {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+}

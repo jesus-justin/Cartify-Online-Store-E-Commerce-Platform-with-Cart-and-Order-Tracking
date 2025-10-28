@@ -3,24 +3,27 @@ include 'db_connect.php';
 include 'header.php';
 ?>
 <link rel="stylesheet" href="../css/products.css">
+<link rel="stylesheet" href="../css/products_search.css">
 
 <main>
     <h2>Our Products</h2>
     <!-- Search + Sort UI -->
-    <form method="get" class="product-filters" style="margin: 10px 0; display:flex; gap:8px; align-items:center;">
-        <input type="text" name="q" placeholder="Search products..." value="<?php echo htmlspecialchars($_GET['q'] ?? '', ENT_QUOTES); ?>">
-        <select name="sort">
-            <option value="" <?php echo empty($_GET['sort']) ? 'selected' : ''; ?>>Sort</option>
-            <option value="price_asc"  <?php echo (($_GET['sort'] ?? '')==='price_asc')?'selected':''; ?>>Price: Low to High</option>
-            <option value="price_desc" <?php echo (($_GET['sort'] ?? '')==='price_desc')?'selected':''; ?>>Price: High to Low</option>
-            <option value="name_asc"   <?php echo (($_GET['sort'] ?? '')==='name_asc')?'selected':''; ?>>Name: A–Z</option>
-            <option value="name_desc"  <?php echo (($_GET['sort'] ?? '')==='name_desc')?'selected':''; ?>>Name: Z–A</option>
-        </select>
-        <button type="submit" class="btn">Apply</button>
-        <?php if (!empty($_GET['q']) || !empty($_GET['sort'])): ?>
-            <a class="btn" href="?page=1">Reset</a>
-        <?php endif; ?>
-    </form>
+    <div class="search-wrapper">
+        <form method="get" class="product-filters">
+            <input type="text" name="q" placeholder="Search products..." value="<?php echo htmlspecialchars($_GET['q'] ?? '', ENT_QUOTES); ?>">
+            <select name="sort">
+                <option value="" <?php echo empty($_GET['sort']) ? 'selected' : ''; ?>>Sort</option>
+                <option value="price_asc"  <?php echo (($_GET['sort'] ?? '')==='price_asc')?'selected':''; ?>>Price: Low to High</option>
+                <option value="price_desc" <?php echo (($_GET['sort'] ?? '')==='price_desc')?'selected':''; ?>>Price: High to Low</option>
+                <option value="name_asc"   <?php echo (($_GET['sort'] ?? '')==='name_asc')?'selected':''; ?>>Name: A–Z</option>
+                <option value="name_desc"  <?php echo (($_GET['sort'] ?? '')==='name_desc')?'selected':''; ?>>Name: Z–A</option>
+            </select>
+            <button type="submit" class="btn">Apply</button>
+            <?php if (!empty($_GET['q']) || !empty($_GET['sort'])): ?>
+                <a class="btn" href="?page=1">Reset</a>
+            <?php endif; ?>
+        </form>
+    </div>
 
     <div class="product-grid">
         <?php
@@ -51,10 +54,7 @@ include 'header.php';
         $overrides = [
             'external_hdd' => [
                 'keywords' => ['external hard drive', 'external hdd', 'portable hdd', 'external drive'],
-                'image' => 'https://i.ebayimg.com/images/g/MvcAAOSwA8Bj2jEa/s-l400.jpg',
-                'description' => 'Portable external hard drive — USB 3.0 / USB‑C, reliable storage for backups and large files.'
-            ],
-            'webcam' => [
+                'image' => 'https://i.eb
                 'keywords' => ['webcam', 'camera webcam', 'usb webcam'],
                 'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvS2dVhQsRkx7cgVRCqjh1QVEjrOm89yDDvQ&s',
                 'description' => '1080p HD webcam with built-in mic — optimized for video calls and live streaming.'

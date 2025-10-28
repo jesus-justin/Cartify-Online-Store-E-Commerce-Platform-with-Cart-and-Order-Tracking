@@ -7,6 +7,18 @@
     <div class="hero-banner">
         <h1>Welcome to Cartify</h1>
         <p>Your One-Stop Tech Shop — Explore Premium Gadgets & Accessories</p>
+        
+        <!-- Small animated delivery cart -->
+        <div class="delivery-cart-wrapper">
+            <svg class="delivery-cart" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="8" width="64" height="18" rx="2" fill="#fff" opacity="0.9"/>
+                <rect x="10" y="2" width="30" height="10" rx="1.5" fill="#ffe8b6"/>
+                <rect x="36" y="3" width="14" height="10" rx="1" fill="#ff7a7a"/>
+                <circle class="wheel" cx="18" cy="30" r="4" fill="#222"/>
+                <circle class="wheel" cx="50" cy="30" r="4" fill="#222"/>
+                <path d="M66 12 L78 12 L84 24" stroke="#fff" stroke-width="2" fill="none"/>
+            </svg>
+        </div>
     </div>
 
     <section class="hero">
