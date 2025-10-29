@@ -1,6 +1,23 @@
 <?php include 'header.php'; ?>
 <link rel="stylesheet" href="../css/index.css">
 <link rel="stylesheet" href="../css/index_animations.css">
+<style>
+/* Scoped animation for the small delivery cart; won't affect global styles */
+.hero-banner { position: relative; overflow: hidden; }
+.delivery-cart-wrapper { position: absolute; top: 55%; left: 0; width: 100%; pointer-events: none; z-index: 5; }
+.delivery-cart { width: 80px; height: auto; opacity: .95; animation: slideCart 10s linear infinite; }
+@keyframes slideCart {
+  0% { transform: translateX(-30vw) translateY(0); opacity: 0; }
+  10% { opacity: .95; }
+  50% { transform: translateX(50vw) translateY(-5px); }
+  90% { opacity: .95; }
+  100% { transform: translateX(130vw) translateY(0); opacity: 0; }
+}
+.delivery-cart .wheel { transform-origin: center; animation: wheelSpin .6s linear infinite; }
+@keyframes wheelSpin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+@media (max-width: 700px) { .delivery-cart-wrapper { display:none; } }
+@media (prefers-reduced-motion: reduce) { .delivery-cart { animation: none !important; } }
+</style>
 
 <main>
     <!-- Animated Hero Banner -->
@@ -9,7 +26,7 @@
         <p>Your One-Stop Tech Shop — Explore Premium Gadgets & Accessories</p>
         
         <!-- Small animated delivery cart -->
-        <div class="delivery-cart-wrapper">
+        <div class="delivery-cart-wrapper" aria-hidden="true">
             <svg class="delivery-cart" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
                 <rect x="2" y="8" width="64" height="18" rx="2" fill="#fff" opacity="0.9"/>
                 <rect x="10" y="2" width="30" height="10" rx="1.5" fill="#ffe8b6"/>
