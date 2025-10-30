@@ -5,7 +5,7 @@
 /* Scoped animation for the small delivery cart; won't affect global styles */
 .hero-banner { position: relative; overflow: hidden; }
 .delivery-cart-wrapper { position: absolute; top: 55%; left: 0; width: 100%; pointer-events: none; z-index: 5; }
-.delivery-cart { width: 80px; height: auto; opacity: .95; animation: slideCart 10s linear infinite; }
+.delivery-cart { width: 80px; height: auto; opacity: .95; animation: slideCart 10s linear infinite; will-change: transform; }
 @keyframes slideCart {
   0% { transform: translateX(-30vw) translateY(0); opacity: 0; }
   10% { opacity: .95; }
@@ -13,7 +13,7 @@
   90% { opacity: .95; }
   100% { transform: translateX(130vw) translateY(0); opacity: 0; }
 }
-.delivery-cart .wheel { transform-origin: center; animation: wheelSpin .6s linear infinite; }
+.delivery-cart .wheel { transform-origin: center; animation: wheelSpin .6s linear infinite; will-change: transform; }
 @keyframes wheelSpin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
 @media (max-width: 700px) { .delivery-cart-wrapper { display:none; } }
 @media (prefers-reduced-motion: reduce) { .delivery-cart { animation: none !important; } }
