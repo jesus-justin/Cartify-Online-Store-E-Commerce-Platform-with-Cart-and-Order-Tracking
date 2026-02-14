@@ -1,99 +1,70 @@
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  margin: 0;
-  padding-top: 140px;
-  color: #333;
-}
-
 main h2 {
   text-align: center;
-  margin: 20px 0;
-  font-size: 2.5rem;
-  color: #1e90ff;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin: 20px 0 10px;
+  font-size: 2.6rem;
+  color: var(--ink-900);
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 30px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.product-card.empty {
-  visibility: hidden;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  padding: 20px 0 10px;
 }
 
 .product-card {
-  background: white;
+  background: #fff;
   padding: 20px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: var(--radius-lg);
+  text-align: left;
+  border: 1px solid rgba(19, 19, 26, 0.06);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .product-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-strong);
 }
 
 .product-card img {
   width: 100%;
-  height: 180px;
+  height: 190px;
   object-fit: contain;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  transition: transform 0.3s ease;
-}
-
-.product-card:hover img {
-  transform: scale(1.05);
+  border-radius: 12px;
+  background: #fff7f2;
+  padding: 12px;
 }
 
 .product-card h3 {
-  margin: 10px 0;
-  font-size: 1.2rem;
-  color: #333;
+  margin: 4px 0 0;
+  font-size: 1.15rem;
+  color: var(--ink-900);
 }
 
 .product-card p {
-  margin: 5px 0;
-  color: #666;
-  font-size: 0.9rem;
+  margin: 0;
+  color: var(--ink-500);
+  font-size: 0.95rem;
 }
 
 .product-card p strong {
-  color: #1e90ff;
+  color: var(--ink-900);
   font-size: 1.1rem;
 }
 
-.btn {
-  background: linear-gradient(90deg, #007bff 0%, #0056b3 100%);
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border: none;
-  border-radius: 25px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  display: inline-block;
-  margin-top: 10px;
+.product-card form {
+  margin-top: auto;
 }
 
-.btn:hover {
-  background: linear-gradient(90deg, #0056b3 0%, #004085 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0,123,255,0.3);
-}
-
-.btn:active {
-  transform: translateY(0);
+.empty-state {
+  text-align: center;
+  color: var(--ink-500);
+  grid-column: 1 / -1;
+  padding: 30px 10px;
 }
 
 /* Pagination Styles */
@@ -101,76 +72,30 @@ main h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 40px auto;
+  margin: 30px auto 10px;
   gap: 10px;
-  max-width: 1200px;
-  padding: 0 20px;
+  flex-wrap: wrap;
 }
 
 .pagination .btn {
-  padding: 8px 16px;
-  margin: 0 2px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background 0.3s ease;
+  padding: 8px 14px;
+  border-radius: 999px;
 }
 
 .pagination .btn.active {
-  background: linear-gradient(90deg, #0056b3 0%, #004085 100%);
-  color: #fff;
-}
-
-.pagination .btn:not(.active):hover {
-  background: linear-gradient(90deg, #007bff 0%, #0056b3 100%);
+  background: linear-gradient(120deg, var(--brand), var(--brand-accent));
   color: #fff;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, auto);
-    gap: 20px;
-    padding: 15px;
-  }
-
-  .product-card {
-    padding: 15px;
-  }
-
   main h2 {
-    font-size: 2rem;
-  }
-
-  .pagination {
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-
-  .pagination .btn {
-    padding: 6px 12px;
-    font-size: 0.9rem;
+    font-size: 2.1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .product-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, auto);
-    gap: 15px;
-  }
-
   .product-card img {
     height: 150px;
-  }
-
-  .pagination {
-    gap: 3px;
-  }
-
-  .pagination .btn {
-    padding: 5px 10px;
-    font-size: 0.8rem;
   }
 }

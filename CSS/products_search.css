@@ -16,6 +16,11 @@
     max-width: 900px;
     width: 100%;
     padding: 0 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 18px;
+    border: 1px solid rgba(19, 19, 26, 0.06);
+    box-shadow: var(--shadow-soft);
+    padding: 16px 20px;
 }
 
 /* Larger search input */
@@ -25,22 +30,23 @@
     max-width: 450px;
     padding: 12px 18px;
     font-size: 16px;
-    border: 2px solid #ddd;
+    border: 1px solid rgba(19, 19, 26, 0.12);
     border-radius: 8px;
     transition: all 0.3s ease;
     outline: none;
+    background: #fff;
 }
 
 .product-filters input[type="text"]:focus {
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: rgba(255, 90, 60, 0.4);
+    box-shadow: 0 0 0 3px rgba(255, 90, 60, 0.12);
 }
 
 /* Larger select dropdown */
 .product-filters select {
     padding: 12px 18px;
     font-size: 16px;
-    border: 2px solid #ddd;
+    border: 1px solid rgba(19, 19, 26, 0.12);
     border-radius: 8px;
     background-color: white;
     cursor: pointer;
@@ -50,8 +56,8 @@
 }
 
 .product-filters select:focus {
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: rgba(16, 185, 129, 0.4);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12);
 }
 
 /* Larger buttons */
@@ -60,7 +66,7 @@
     font-size: 16px;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(120deg, var(--brand), var(--brand-accent));
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -79,14 +85,16 @@
 }
 
 /* Reset button style */
-.product-filters a.btn {
-    background: #e0e0e0;
-    color: #333;
+.product-filters .btn.btn--ghost {
+    background: #fff;
+    color: var(--ink-700);
+    border: 1px solid rgba(19, 19, 26, 0.12);
+    box-shadow: none;
 }
 
-.product-filters a.btn:hover {
-    background: #d0d0d0;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+.product-filters .btn.btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: var(--shadow-soft);
 }
 
 /* Responsive adjustments */
