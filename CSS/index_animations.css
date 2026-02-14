@@ -1,31 +1,11 @@
-/* Smooth scroll for entire page */
 html {
     scroll-behavior: smooth;
 }
 
-/* Fade-in animation for main content */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-main {
-    animation: fadeIn 0.8s ease-out;
-}
-
-/* Animated gradient hero banner */
-.hero-banner {
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    background-size: 200% 200%;
-    animation: gradientShift 8s ease infinite;
-    padding: 60px 20px;
-    text-align: center;
-    color: white;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+@keyframes floatSlow {
+    from { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    to { transform: translateY(0); }
 }
 
 @keyframes gradientShift {
@@ -34,33 +14,26 @@ main {
     100% { background-position: 0% 50%; }
 }
 
-.hero-banner h1 {
-    font-size: 3em;
-    margin: 0;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    animation: slideInDown 1s ease-out;
+.hero-banner {
+    background-size: 200% 200%;
+    animation: gradientShift 10s ease infinite;
 }
 
-.hero-banner p {
-    font-size: 1.3em;
-    margin-top: 10px;
-    animation: slideInUp 1s ease-out 0.2s both;
+.hero-card {
+    animation: floatSlow 6s ease-in-out infinite;
 }
 
-@keyframes slideInDown {
-    from { transform: translateY(-50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+.orb--one {
+    animation: floatSlow 8s ease-in-out infinite;
 }
 
-@keyframes slideInUp {
-    from { transform: translateY(50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+.orb--two {
+    animation: floatSlow 10s ease-in-out infinite;
 }
 
-/* Delivery cart animation */
 .delivery-cart-wrapper {
     position: absolute;
-    top: 55%;
+    top: 58%;
     left: 0;
     width: 100%;
     pointer-events: none;
@@ -72,25 +45,21 @@ main {
     height: auto;
     opacity: 0.95;
     animation: slideCart 10s linear infinite;
+    will-change: transform;
 }
 
 @keyframes slideCart {
-    0% {
-        transform: translateX(-30vw) translateY(0);
-        opacity: 0;
-    }
+    0% { transform: translateX(-30vw) translateY(0); opacity: 0; }
     10% { opacity: 0.95; }
     50% { transform: translateX(50vw) translateY(-5px); }
     90% { opacity: 0.95; }
-    100% {
-        transform: translateX(130vw) translateY(0);
-        opacity: 0;
-    }
+    100% { transform: translateX(130vw) translateY(0); opacity: 0; }
 }
 
 .delivery-cart .wheel {
     transform-origin: center;
     animation: wheelSpin 0.6s linear infinite;
+    will-change: transform;
 }
 
 @keyframes wheelSpin {
@@ -98,38 +67,6 @@ main {
     to { transform: rotate(360deg); }
 }
 
-/* Floating scroll-to-top button */
-#scrollToTop {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    font-size: 24px;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    z-index: 1000;
-}
-
-#scrollToTop.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-#scrollToTop:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
-
 @media (max-width: 700px) {
     .delivery-cart-wrapper { display: none; }
-    .hero-banner h1 { font-size: 2em; }
-    .hero-banner p { font-size: 1em; }
 }

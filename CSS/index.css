@@ -1,126 +1,218 @@
-body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #e0e7ff 0%, #fafafa 100%);
-  margin: 0;
-  transition: background 0.5s ease;
-}
-
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #fff 0%, #f0f8ff 100%);
+.hero-banner {
   position: relative;
-  animation: fadeInUp 1s ease-out;
-  max-width: 1200px;
-  margin: 0 auto;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  padding: 70px 20px 90px;
+  background: linear-gradient(135deg, rgba(255, 90, 60, 0.18), rgba(16, 185, 129, 0.12));
+  border-radius: var(--radius-xl);
+  margin: 25px auto 40px;
+  box-shadow: var(--shadow-strong);
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+.hero-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 40px;
+  align-items: center;
 }
 
-.hero h1, .hero p {
-  animation: fadeIn 1.2s ease-out;
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(19, 19, 26, 0.08);
+  font-weight: 600;
+  color: var(--ink-700);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.hero-copy h1 {
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  margin: 16px 0 12px;
 }
 
-.shop-btn {
-  background: #1e90ff;
-  color: white;
-  padding: 12px 24px;
-  text-decoration: none;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(30,144,255,0.2);
-  font-weight: bold;
-  transition: all 0.3s ease;
-  display: inline-block;
-  margin-top: 20px;
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0 28px;
 }
 
-.shop-btn:hover {
-  background: #0056b3;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(30,144,255,0.3);
+.hero-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
 }
 
-.shop-btn:active {
-  transform: translateY(0);
+.highlight {
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 14px;
+  border: 1px solid rgba(19, 19, 26, 0.06);
+}
+
+.highlight strong {
+  display: block;
+  font-weight: 700;
+  color: var(--ink-900);
+}
+
+.highlight span {
+  font-size: 0.9rem;
+  color: var(--ink-500);
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 280px;
+}
+
+.hero-card {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 20px 22px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(19, 19, 26, 0.06);
+  box-shadow: var(--shadow-strong);
+}
+
+.hero-card h3 {
+  margin-bottom: 8px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  margin-top: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: linear-gradient(120deg, var(--brand), var(--brand-accent));
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(0.5px);
+}
+
+.orb--one {
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(255, 90, 60, 0.6), rgba(255, 90, 60, 0.1));
+  top: 10px;
+  right: 80px;
+}
+
+.orb--two {
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.45), rgba(16, 185, 129, 0.12));
+  bottom: -30px;
+  left: 20px;
 }
 
 .features {
-  display: flex;
-  justify-content: space-around;
-  padding: 60px 20px;
-  background: #fff;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin: 40px auto 20px;
 }
 
 .feature {
-  text-align: center;
-  flex: 1;
-  margin: 0 20px;
-  padding: 20px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #f0f8ff 0%, #e0e7ff 100%);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.feature:hover {
-  transform: translateY(-5px);
+  background: #fff;
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(19, 19, 26, 0.06);
+  text-align: left;
 }
 
 .feature-icon {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.feature h3 {
-  color: #1e90ff;
+  font-size: 2.2rem;
   margin-bottom: 10px;
 }
 
 .cta {
-  text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #1e90ff 0%, #00bfff 100%);
-  color: white;
-  max-width: 1200px;
-  margin: 0 auto;
-  border-radius: 10px;
-  margin-bottom: 40px;
+  margin: 40px 0 30px;
 }
 
-.cta-btn {
-  background: white;
-  color: #1e90ff;
-  padding: 12px 24px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  display: inline-block;
+.cta-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 28px 30px;
+  background: linear-gradient(120deg, rgba(255, 90, 60, 0.22), rgba(16, 185, 129, 0.18));
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(19, 19, 26, 0.06);
+  box-shadow: var(--shadow-soft);
+}
+
+.featured-products {
   margin-top: 20px;
 }
 
-.cta-btn:hover {
-  background: #f0f8ff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+.featured-products .product-grid {
+  margin-top: 24px;
 }
 
-footer {
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.product-card {
+  background: #fff;
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(19, 19, 26, 0.06);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-card img {
+  height: 180px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #fff7f2;
+  padding: 10px;
+}
+
+.product-card p {
+  margin: 0;
+  color: var(--ink-500);
+}
+
+.empty-state {
   text-align: center;
-  padding: 20px 0;
-  background: #f0f4ff;
-  color: #333;
-  font-size: 1rem;
+  color: var(--ink-500);
+}
+
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 700px) {
+  .cta-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-banner {
+    padding: 50px 18px 70px;
+  }
 }

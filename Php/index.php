@@ -1,31 +1,43 @@
-<?php include 'header.php'; ?>
-<link rel="stylesheet" href="../css/index.css">
-<link rel="stylesheet" href="../css/index_animations.css">
-<style>
-/* Scoped animation for the small delivery cart; won't affect global styles */
-.hero-banner { position: relative; overflow: hidden; }
-.delivery-cart-wrapper { position: absolute; top: 55%; left: 0; width: 100%; pointer-events: none; z-index: 5; }
-.delivery-cart { width: 80px; height: auto; opacity: .95; animation: slideCart 10s linear infinite; will-change: transform; }
-@keyframes slideCart {
-  0% { transform: translateX(-30vw) translateY(0); opacity: 0; }
-  10% { opacity: .95; }
-  50% { transform: translateX(50vw) translateY(-5px); }
-  90% { opacity: .95; }
-  100% { transform: translateX(130vw) translateY(0); opacity: 0; }
-}
-.delivery-cart .wheel { transform-origin: center; animation: wheelSpin .6s linear infinite; will-change: transform; }
-@keyframes wheelSpin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
-@media (max-width: 700px) { .delivery-cart-wrapper { display:none; } }
-@media (prefers-reduced-motion: reduce) { .delivery-cart { animation: none !important; } }
-</style>
+<?php
+include 'header.php';
+include 'db_connect.php';
+include 'product_helpers.php';
+?>
+<link rel="stylesheet" href="../CSS/index.css">
+<link rel="stylesheet" href="../CSS/index_animations.css">
 
 <main>
-    <!-- Animated Hero Banner -->
-    <div class="hero-banner">
-        <h1>Welcome to Cartify</h1>
-        <p>Your One-Stop Tech Shop — Explore Premium Gadgets & Accessories</p>
-        
-        <!-- Small animated delivery cart -->
+    <section class="hero-banner">
+        <div class="hero-content">
+            <div class="hero-copy">
+                <span class="hero-pill">New drops every week</span>
+                <h1>Upgrade your everyday tech with Cartify.</h1>
+                <p>Curated gadgets, standout accessories, and a checkout that feels effortless. Discover what is trending now.</p>
+                <div class="hero-actions">
+                    <a href="products.php" class="btn">Shop the Collection</a>
+                    <a href="order_history.php" class="btn btn--ghost">Track Orders</a>
+                </div>
+                <div class="hero-highlights">
+                    <div class="highlight">
+                        <strong>24h dispatch</strong>
+                        <span>Fast processing on top picks</span>
+                    </div>
+                    <div class="highlight">
+                        <strong>Secure checkout</strong>
+                        <span>Protected payments, every order</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+                <div class="orb orb--one"></div>
+                <div class="orb orb--two"></div>
+                <div class="hero-card">
+                    <h3>Trending Now</h3>
+                    <p>Wireless audio, smart wearables, and creative tools.</p>
+                    <span class="hero-badge">Top Rated</span>
+                </div>
+            </div>
+        </div>
         <div class="delivery-cart-wrapper" aria-hidden="true">
             <svg class="delivery-cart" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
                 <rect x="2" y="8" width="64" height="18" rx="2" fill="#fff" opacity="0.9"/>
@@ -36,64 +48,65 @@
                 <path d="M66 12 L78 12 L84 24" stroke="#fff" stroke-width="2" fill="none"/>
             </svg>
         </div>
-    </div>
-
-    <section class="hero">
-        <h2>Welcome to PinoyTech Finds!</h2>
-        <p>Discover the latest gadgets and tech accessories at great prices.</p>
-        <a href="products.php" class="shop-btn">Shop Now</a>
     </section>
 
     <section class="features">
         <div class="feature">
             <div class="feature-icon">🚚</div>
-            <h3>Fast Shipping</h3>
-            <p>Get your orders delivered quickly and safely.</p>
+            <h3>Fast shipping</h3>
+            <p>Quick dispatch and local delivery for your everyday essentials.</p>
         </div>
         <div class="feature">
             <div class="feature-icon">💳</div>
-            <h3>Secure Payments</h3>
-            <p>Shop with confidence using our secure payment options.</p>
+            <h3>Secure checkout</h3>
+            <p>Trusted payment flow with clear order tracking.</p>
         </div>
         <div class="feature">
             <div class="feature-icon">🔄</div>
-            <h3>Easy Returns</h3>
-            <p>Not satisfied? Return your items hassle-free.</p>
+            <h3>Easy returns</h3>
+            <p>Simple returns when a product is not the right fit.</p>
         </div>
     </section>
 
     <section class="cta">
-        <h2>Ready to Upgrade Your Tech?</h2>
-        <p>Join thousands of satisfied customers and explore our collection today!</p>
-        <a href="products.php" class="cta-btn">Explore Products</a>
+        <div class="cta-card">
+            <div>
+                <h2>Ready to upgrade your setup?</h2>
+                <p>Discover accessories and gear that make work, play, and travel feel sharper.</p>
+            </div>
+            <a href="products.php" class="btn">Explore products</a>
+        </div>
     </section>
 
-    <h2>Featured Products</h2>
-    <div class="product-grid">
-        <?php
-        // ...existing code (image_urls, overrides, queries)...
-        ?>
-    </div>
+    <section class="featured-products">
+        <h2 class="section-title">Featured products</h2>
+        <p class="section-subtitle">Hand-picked tech favorites to help you move faster, create more, and stay connected.</p>
+        <div class="product-grid">
+            <?php
+            $result = $conn->query("SELECT * FROM products ORDER BY id ASC LIMIT 6");
+            if ($result && $result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $media = resolve_product_media($row['name'], (int) $row['id'], $row['description']);
+                    $img_src = $media['image'];
+                    $desc = $media['description'];
+                    echo "
+                    <div class='product-card'>
+                        <img src='" . htmlspecialchars($img_src, ENT_QUOTES) . "'
+                             onerror=\"this.onerror=null;this.src='https://via.placeholder.com/800x600?text=No+Image'\"
+                             alt='" . htmlspecialchars($row['name'], ENT_QUOTES) . "'
+                             loading='lazy' decoding='async'>
+                        <h3>" . htmlspecialchars($row['name']) . "</h3>
+                        <p>" . htmlspecialchars($desc) . "</p>
+                        <p><strong>₱" . number_format((float) $row['price'], 2) . "</strong></p>
+                        <a href='products.php' class='btn btn--ghost'>View details</a>
+                    </div>";
+                }
+            } else {
+                echo "<p class='empty-state'>No featured products yet. Please check back soon.</p>";
+            }
+            ?>
+        </div>
+    </section>
 </main>
-
-<!-- Scroll to Top Button -->
-<button id="scrollToTop" title="Back to top">↑</button>
-
-<script>
-// Show/hide scroll-to-top button
-const scrollBtn = document.getElementById('scrollToTop');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        scrollBtn.classList.add('show');
-    } else {
-        scrollBtn.classList.remove('show');
-    }
-});
-
-// Smooth scroll to top
-scrollBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-</script>
 
 <?php include 'footer.php'; ?>
