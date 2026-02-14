@@ -1,13 +1,13 @@
 // Simple scroll effects
+const header = document.querySelector('.site-header');
 window.addEventListener('scroll', function() {
-  const header = document.querySelector('header');
-  const scrollY = window.scrollY;
-
-  if (scrollY > 30) {
-    header.style.boxShadow = '0 6px 24px rgba(30,144,255,0.25)';
-  } else {
-    header.style.boxShadow = '0 2px 8px rgba(30,144,255,0.15)';
+  if (!header) {
+    return;
   }
+  const scrollY = window.scrollY;
+  header.style.boxShadow = scrollY > 30
+    ? '0 14px 32px rgba(19, 19, 26, 0.12)'
+    : '0 12px 30px rgba(19, 19, 26, 0.06)';
 });
 
 // Button click effects
@@ -33,18 +33,35 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Responsive navigation toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const navToggle = document.querySelector('.nav-toggle');
+  const siteHeader = document.querySelector('.site-header');
+
+  if (navToggle && siteHeader) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = siteHeader.classList.toggle('nav-open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+  }
+});
+
 // Scroll-triggered reveal animations
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries, obs) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('reveal');
+      obs.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.15 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const elementsToReveal = document.querySelectorAll('.product-card, .product-grid, table, form');
-  elementsToReveal.forEach(el => observer.observe(el));
+  const elementsToReveal = document.querySelectorAll('.product-card, .product-grid, table, form, .feature, .hero');
+  elementsToReveal.forEach(el => {
+    el.classList.add('reveal-ready');
+    observer.observe(el);
+  });
 });
 
 // Staggered animations for product cards
@@ -65,5 +82,21 @@ document.addEventListener('DOMContentLoaded', () => {
     row.addEventListener('mouseleave', function() {
       this.style.backgroundColor = '';
     });
+  });
+});
+
+// Scroll-to-top button
+document.addEventListener('DOMContentLoaded', () => {
+  const scrollBtn = document.querySelector('.scroll-top');
+  if (!scrollBtn) {
+    return;
+  }
+
+  window.addEventListener('scroll', () => {
+    scrollBtn.classList.toggle('is-visible', window.scrollY > 350);
+  });
+
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
