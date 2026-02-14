@@ -4,7 +4,8 @@
     padding: 20px;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(19, 19, 26, 0.06);
 }
 
 .form-group {
@@ -20,7 +21,7 @@
 .form-group input {
     width: 100%;
     padding: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(19, 19, 26, 0.12);
     border-radius: 4px;
 }
 
@@ -32,17 +33,17 @@
 }
 
 .update-btn {
-    background: #4CAF50 !important;
+    background: #1e7f5b !important;
 }
 
 .delete-btn {
-    background: #f44336 !important;
+    background: #b42318 !important;
 }
 
 .update-btn:hover {
-    background: #45a049 !important;
+    background: #19664a !important;
 }
 
 .delete-btn:hover {
-    background: #da190b !important;
+    background: #912018 !important;
 }
