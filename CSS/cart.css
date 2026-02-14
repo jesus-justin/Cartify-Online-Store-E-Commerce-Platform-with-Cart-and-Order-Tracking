@@ -1,17 +1,8 @@
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding-top: 80px;
-  background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
-  color: #333;
-}
-
 main h2 {
   text-align: center;
   margin: 20px 0;
   font-size: 2.5rem;
-  color: #e17055;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  color: var(--ink-900);
 }
 
 table {
@@ -22,7 +13,7 @@ table {
   background: white;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-soft);
 }
 
 th, td {
@@ -33,7 +24,7 @@ th, td {
 }
 
 th {
-  background: linear-gradient(90deg, #e17055 0%, #d63031 100%);
+  background: linear-gradient(120deg, var(--brand), var(--brand-accent));
   color: white;
   font-weight: bold;
   text-transform: uppercase;
@@ -45,33 +36,8 @@ tr:nth-child(even) {
 }
 
 tr:hover {
-  background: #ffeaa7;
+  background: #fff5ee;
   transform: scale(1.01);
-}
-
-.btn {
-  background: linear-gradient(90deg, #dc3545 0%, #b02a37 100%);
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 20px;
-  text-decoration: none;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn:hover {
-  background: linear-gradient(90deg, #b02a37 0%, #922b00 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(220,53,69,0.3);
-}
-
-.btn:active {
-  transform: translateY(0);
 }
 
 /* Empty cart message */
@@ -79,7 +45,7 @@ tr:hover {
   text-align: center;
   margin: 50px 0;
   font-size: 1.2rem;
-  color: #666;
+  color: var(--ink-500);
 }
 
 /* Responsive Design */
@@ -124,7 +90,3 @@ h3 {
   width: fit-content;
 }
 
-footer {
-  text-align: center;
-  padding: 20px 0;
-}
