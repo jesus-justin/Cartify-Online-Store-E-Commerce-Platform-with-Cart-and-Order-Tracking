@@ -10,9 +10,9 @@ include 'product_helpers.php';
     <section class="hero-banner">
         <div class="hero-content">
             <div class="hero-copy">
-                <span class="hero-pill">New drops every week</span>
+                <span class="hero-pill">Weekly tech drops</span>
                 <h1>Upgrade your everyday tech with Cartify.</h1>
-                <p>Curated gadgets, standout accessories, and a checkout that feels effortless. Discover what is trending now.</p>
+                <p>Curated gadgets, standout accessories, and an effortless checkout. Discover what is trending now.</p>
                 <div class="hero-actions">
                     <a href="products.php" class="btn">Shop the Collection</a>
                     <a href="order_history.php" class="btn btn--ghost">Track Orders</a>
@@ -71,8 +71,8 @@ include 'product_helpers.php';
     <section class="cta">
         <div class="cta-card">
             <div>
-                <h2>Ready to upgrade your setup?</h2>
-                <p>Discover accessories and gear that make work, play, and travel feel sharper.</p>
+                <h2>Ready to sharpen your setup?</h2>
+                <p>Discover accessories and gear that make work, play, and travel feel faster.</p>
             </div>
             <a href="products.php" class="btn">Explore products</a>
         </div>
