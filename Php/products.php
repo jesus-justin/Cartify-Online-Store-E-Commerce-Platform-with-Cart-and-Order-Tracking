@@ -111,7 +111,7 @@ include 'product_helpers.php';
     </div>
 
     <!-- Pagination -->
-    <div class="pagination">
+    <div class="pagination" aria-label="Product pages">
         <?php
         // Preserve query across pagination
         $qs = (!empty($q) || !empty($sort)) ? ('&q=' . urlencode($q) . '&sort=' . urlencode($sort)) : '';
@@ -119,18 +119,18 @@ include 'product_helpers.php';
         if ($total_pages > 1) {
             // Previous button
             if ($page > 1) {
-                echo "<a href='?page=" . ($page - 1) . $qs . "' class='btn'>Previous</a>";
+                echo "<a href='?page=" . ($page - 1) . $qs . "' class='btn' aria-label='Previous page'>Previous</a>";
             }
 
             // Page numbers
             for ($i = 1; $i <= $total_pages; $i++) {
                 $active = ($i == $page) ? 'active' : '';
-                echo "<a href='?page=$i" . $qs . "' class='btn $active'>$i</a>";
+                echo "<a href='?page=$i" . $qs . "' class='btn $active' aria-label='Page $i'>$i</a>";
             }
 
             // Next button
             if ($page < $total_pages) {
-                echo "<a href='?page=" . ($page + 1) . $qs . "' class='btn'>Next</a>";
+                echo "<a href='?page=" . ($page + 1) . $qs . "' class='btn' aria-label='Next page'>Next</a>";
             }
         }
         ?>
