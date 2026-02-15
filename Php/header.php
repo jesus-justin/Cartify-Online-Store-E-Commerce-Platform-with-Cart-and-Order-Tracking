@@ -6,7 +6,10 @@
     <meta name="description" content="Cartify - modern tech shop for gadgets, accessories, and fast delivery.">
     <meta property="og:title" content="Cartify - PinoyTech Finds">
     <meta property="og:description" content="Shop trending gadgets and accessories with fast checkout and order tracking.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=80">
     <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#ff5a3c">
     <title>Cartify | PinoyTech Finds</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
