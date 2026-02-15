@@ -65,6 +65,10 @@ main h2 {
   margin-top: auto;
 }
 
+.product-card .btn {
+  width: 100%;
+}
+
 .empty-state {
   text-align: center;
   color: var(--ink-500);
