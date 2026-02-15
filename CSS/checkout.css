@@ -21,6 +21,10 @@ form .btn {
   margin-top: 20px;
 }
 
+.form-messages {
+  margin-top: 16px;
+}
+
 form::before {
   content: '';
   position: absolute;

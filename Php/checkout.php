@@ -41,12 +41,14 @@ if (isset($_POST['place_order'])) {
         ?>
         <p>Total Amount: ₱<?php echo number_format((float) $total, 2); ?></p>
         <button type="submit" name="place_order" class="btn">Place Order</button>
-        <?php if ($success_message !== ''): ?>
-            <p class="success-message"><?php echo $success_message; ?></p>
-        <?php endif; ?>
-        <?php if ($error_message !== ''): ?>
-            <p class="error-message"><?php echo $error_message; ?></p>
-        <?php endif; ?>
+        <div class="form-messages" role="status" aria-live="polite">
+            <?php if ($success_message !== ''): ?>
+                <p class="success-message"><?php echo $success_message; ?></p>
+            <?php endif; ?>
+            <?php if ($error_message !== ''): ?>
+                <p class="error-message"><?php echo $error_message; ?></p>
+            <?php endif; ?>
+        </div>
     </form>
 </main>
 
