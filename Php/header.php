@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../CSS/header.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
         <div class="brand">
             <a href="index.php" class="brand-link">

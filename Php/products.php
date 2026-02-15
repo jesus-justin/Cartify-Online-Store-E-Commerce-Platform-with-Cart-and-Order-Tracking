@@ -6,7 +6,7 @@ include 'product_helpers.php';
 <link rel="stylesheet" href="../CSS/products.css">
 <link rel="stylesheet" href="../CSS/products_search.css">
 
-<main>
+<main id="main-content">
     <h2>Our Products</h2>
     <!-- Search + Sort UI -->
     <div class="search-wrapper">
@@ -97,7 +97,7 @@ include 'product_helpers.php';
                          loading='lazy' decoding='async'>
                     <h3>" . htmlspecialchars($row['name']) . "</h3>
                     <p>" . htmlspecialchars($desc) . "</p>
-                    <p><strong>₱" . number_format((float) $row['price'], 2) . "</strong></p>
+                    <p class='price-tag'>₱" . format_price($row['price']) . "</p>
                     <form method='post' action='cart.php'>
                         <input type='hidden' name='product_id' value='" . htmlspecialchars($row['id']) . "'>
                         <button type='submit' name='add_to_cart' class='btn'>Add to Cart</button>

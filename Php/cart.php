@@ -25,7 +25,7 @@ if (isset($_POST['add_to_cart'])) {
 ?>
 <link rel="stylesheet" href="../CSS/cart.css">
 
-<main>
+<main id="main-content">
     <h2>Your Shopping Cart</h2>
     <?php
     $sql = "SELECT p.name, p.price, c.quantity 

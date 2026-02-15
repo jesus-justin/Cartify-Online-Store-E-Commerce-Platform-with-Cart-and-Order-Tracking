@@ -51,9 +51,14 @@ main h2 {
   font-size: 0.95rem;
 }
 
-.product-card p strong {
+.price-tag {
   color: var(--ink-900);
   font-size: 1.1rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 90, 60, 0.12);
+  align-self: flex-start;
 }
 
 .product-card form {

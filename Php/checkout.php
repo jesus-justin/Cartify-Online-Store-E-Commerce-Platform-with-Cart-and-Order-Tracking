@@ -29,7 +29,7 @@ if (isset($_POST['place_order'])) {
 ?>
 <link rel="stylesheet" href="../CSS/checkout.css">
 
-<main>
+<main id="main-content">
     <h2>Checkout</h2>
     <form method="post">
         <label>Name:</label>

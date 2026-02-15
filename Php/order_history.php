@@ -5,7 +5,7 @@ include 'header.php';
 <link rel="stylesheet" href="../CSS/order_history.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-<main>
+<main id="main-content">
     <h2>Order History</h2>
     <div class="manage-container">
         <a href="manage_orders.php" class="manage-btn">

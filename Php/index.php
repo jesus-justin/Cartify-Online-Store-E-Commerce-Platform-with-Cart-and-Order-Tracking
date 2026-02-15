@@ -6,7 +6,7 @@ include 'product_helpers.php';
 <link rel="stylesheet" href="../CSS/index.css">
 <link rel="stylesheet" href="../CSS/index_animations.css">
 
-<main>
+<main id="main-content">
     <section class="hero-banner">
         <div class="hero-content">
             <div class="hero-copy">
@@ -97,7 +97,7 @@ include 'product_helpers.php';
                              loading='lazy' decoding='async'>
                         <h3>" . htmlspecialchars($row['name']) . "</h3>
                         <p>" . htmlspecialchars($desc) . "</p>
-                        <p><strong>₱" . number_format((float) $row['price'], 2) . "</strong></p>
+                        <p class='price-tag'>₱" . format_price($row['price']) . "</p>
                         <a href='products.php' class='btn btn--ghost'>View details</a>
                     </div>";
                 }

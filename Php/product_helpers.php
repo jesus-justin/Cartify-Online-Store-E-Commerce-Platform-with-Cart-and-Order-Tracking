@@ -149,4 +149,8 @@ function resolve_product_media($name, $id, $fallback_desc) {
         'description' => $desc
     ];
 }
+
+function format_price($price) {
+    return number_format((float) $price, 2);
+}
 ```

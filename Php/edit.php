@@ -45,7 +45,7 @@ if (isset($_GET['id'])) {
 <link rel="stylesheet" href="../CSS/order_history.css">
 <link rel="stylesheet" href="../CSS/edit.css">
 
-<main>
+<main id="main-content">
     <h2>Edit Order</h2>
     <div class="edit-form">
         <?php if (!empty($order)): ?>
