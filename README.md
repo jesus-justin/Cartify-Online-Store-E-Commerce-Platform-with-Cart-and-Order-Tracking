@@ -13,6 +13,7 @@ Cartify is a PHP + MySQL storefront for tech gadgets and accessories. It feature
 1. Import your database schema and sample data.
 2. Update database credentials in Php/db_connect.php if needed.
 3. Open Php/index.php in your local server (XAMPP or similar).
+4. (Optional) Run sql/add_indexes.sql to speed up catalog and order queries.
 
 ## Suggested Enhancements
 - Add product categories and filters
