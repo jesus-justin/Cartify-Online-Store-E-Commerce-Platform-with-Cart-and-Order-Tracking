@@ -38,11 +38,33 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.querySelector('.nav-toggle');
   const siteHeader = document.querySelector('.site-header');
+  const navButtons = document.querySelector('.nav-buttons');
 
   if (navToggle && siteHeader) {
+    const closeNav = () => {
+      siteHeader.classList.remove('nav-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    };
+
     navToggle.addEventListener('click', () => {
       const isOpen = siteHeader.classList.toggle('nav-open');
       navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!siteHeader.classList.contains('nav-open')) {
+        return;
+      }
+      const target = event.target;
+      if (!siteHeader.contains(target) || (navButtons && navButtons.contains(target) && target.tagName === 'A')) {
+        closeNav();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && siteHeader.classList.contains('nav-open')) {
+        closeNav();
+      }
     });
   }
 });
