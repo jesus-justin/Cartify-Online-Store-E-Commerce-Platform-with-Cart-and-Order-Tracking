@@ -27,6 +27,15 @@ include 'product_helpers.php';
         </form>
     </div>
 
+    <?php
+    $sort_labels = [
+        'price_asc' => 'Price: Low to High',
+        'price_desc' => 'Price: High to Low',
+        'name_asc' => 'Name: A-Z',
+        'name_desc' => 'Name: Z-A'
+    ];
+    ?>
+
     <div class="product-grid">
         <?php
         $q = isset($_GET['q']) ? trim($_GET['q']) : '';
@@ -63,6 +72,20 @@ include 'product_helpers.php';
         $total_row = $total_result->fetch_assoc();
         $total_products = (int) ($total_row['total'] ?? 0);
         $total_pages = $total_products > 0 ? (int) ceil($total_products / $limit) : 1;
+
+        echo "<div class='results-meta'>";
+        echo "<p class='results-count'>Showing " . $total_products . " result(s)</p>";
+        if ($q !== '' || $sort !== '') {
+            echo "<div class='active-filters'>";
+            if ($q !== '') {
+                echo "<span class='filter-pill'>Search: " . htmlspecialchars($q) . "</span>";
+            }
+            if ($sort !== '' && isset($sort_labels[$sort])) {
+                echo "<span class='filter-pill'>" . htmlspecialchars($sort_labels[$sort]) . "</span>";
+            }
+            echo "</div>";
+        }
+        echo "</div>";
 
         if ($page < 1) {
             $page = 1;
