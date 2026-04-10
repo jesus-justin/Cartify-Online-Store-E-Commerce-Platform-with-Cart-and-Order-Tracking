@@ -48,6 +48,34 @@ tr:hover {
   color: var(--ink-500);
 }
 
+.cart-summary {
+  text-align: center;
+  color: var(--ink-500);
+  margin: 18px 0 4px;
+}
+
+.quantity-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.quantity-form input[type="number"] {
+  width: 72px;
+  padding: 8px;
+  border: 1px solid rgba(19, 19, 26, 0.15);
+  border-radius: 8px;
+}
+
+.inline-form {
+  display: inline-block;
+}
+
+.btn-danger {
+  background: linear-gradient(120deg, #d14545, #b42318);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   table {
@@ -57,6 +85,10 @@ tr:hover {
 
   th, td {
     padding: 10px;
+  }
+
+  .quantity-form {
+    flex-direction: column;
   }
 
   main h2 {
