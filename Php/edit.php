@@ -3,6 +3,7 @@ include 'db_connect.php';
 include 'header.php';
 
 $order = null;
+$form_error = '';
 
 if (isset($_GET['id'])) {
     $id = (int) $_GET['id'];
@@ -20,15 +21,21 @@ if (isset($_GET['id'])) {
 
     // Handle Update
     if(isset($_POST['update'])) {
-        $customer_name = $_POST['customer_name'];
-        $total = $_POST['total'];
-        
-        $sql = "UPDATE orders SET customer_name = ?, total = ? WHERE id = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sdi", $customer_name, $total, $id);
-        if($stmt->execute()) {
-            header("Location: order_history.php");
-            exit();
+        $customer_name = trim($_POST['customer_name'] ?? '');
+        $total = isset($_POST['total']) ? (float) $_POST['total'] : 0;
+
+        if ($customer_name === '') {
+            $form_error = 'Customer name is required.';
+        } elseif ($total < 0) {
+            $form_error = 'Total amount cannot be negative.';
+        } else {
+            $sql = "UPDATE orders SET customer_name = ?, total = ? WHERE id = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("sdi", $customer_name, $total, $id);
+            if($stmt->execute()) {
+                header("Location: order_history.php");
+                exit();
+            }
         }
     }
 
@@ -50,6 +57,9 @@ if (isset($_GET['id'])) {
     <div class="edit-form">
         <?php if (!empty($order)): ?>
             <form method="POST">
+                <?php if ($form_error !== ''): ?>
+                    <p class="error-message"><?php echo htmlspecialchars($form_error, ENT_QUOTES); ?></p>
+                <?php endif; ?>
                 <div class="form-group">
                     <label>Customer Name:</label>
                     <input type="text" name="customer_name" value="<?php echo htmlspecialchars($order['customer_name'] ?? ''); ?>" required>

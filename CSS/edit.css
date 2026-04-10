@@ -32,6 +32,15 @@
     margin-top: 20px;
 }
 
+.error-message {
+    margin: 0 0 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: rgba(180, 35, 24, 0.1);
+    color: #912018;
+    font-weight: 600;
+}
+
 .update-btn {
     background: #1e7f5b !important;
 }
