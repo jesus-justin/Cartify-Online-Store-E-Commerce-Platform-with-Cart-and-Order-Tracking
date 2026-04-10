@@ -25,6 +25,18 @@ form .btn {
   margin-top: 16px;
 }
 
+.empty-cart-note {
+  margin: 10px 0 0;
+  color: #b42318;
+  font-weight: 600;
+}
+
+.btn[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  filter: grayscale(0.2);
+}
+
 form::before {
   content: '';
   position: absolute;
